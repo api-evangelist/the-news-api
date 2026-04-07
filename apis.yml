@@ -8,9 +8,9 @@ position: Consumer
 access: 3rd-Party
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - News
   - Articles
   - Headlines
+  - News
 created: '2025-02-09'
 modified: '2026-03-16'
 url: >-
@@ -25,9 +25,9 @@ apis:
     humanURL: https://www.thenewsapi.com/
     baseURL: https://api.thenewsapi.com/v1
     tags:
-      - News
       - Articles
       - Headlines
+      - News
     properties:
       - type: Documentation
         url: https://www.thenewsapi.com/documentation
