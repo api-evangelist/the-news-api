@@ -1,0 +1,150 @@
+vocabulary: the-news-api
+description: >-
+  Vocabulary and taxonomy for The News API covering article metadata,
+  content categories, filtering parameters, and search capabilities.
+version: "1.0"
+created: "2026-05-03"
+modified: "2026-05-03"
+
+domains:
+  - name: Content Categories
+    description: Categories used to classify news articles.
+    terms:
+      - term: general
+        definition: "General news not fitting other categories. Includes local news, human interest, and top headlines."
+      - term: business
+        definition: "Business and economic news including markets, companies, trade, and finance."
+      - term: sports
+        definition: "Sports news covering professional and amateur athletics, scores, and sports business."
+      - term: tech
+        definition: "Technology news covering software, hardware, AI, startups, and digital policy."
+      - term: science
+        definition: "Science news covering research, discoveries, space, environment, and academic findings."
+      - term: health
+        definition: "Health and medicine news covering medical research, public health, and wellness."
+      - term: entertainment
+        definition: "Entertainment news covering film, music, television, celebrities, and arts."
+      - term: politics
+        definition: "Political news covering elections, government policy, legislation, and international relations."
+      - term: food
+        definition: "Food and dining news including recipes, restaurants, food culture, and agriculture."
+      - term: travel
+        definition: "Travel news covering destinations, tourism industry, airlines, and travel tips."
+
+  - name: Article Fields
+    description: Fields returned in article responses.
+    terms:
+      - term: uuid
+        definition: "Universally Unique Identifier for the article. Used to retrieve specific articles or find similar ones."
+      - term: title
+        definition: "The article headline as published by the source."
+      - term: description
+        definition: "A short 1-3 sentence description or summary of the article content."
+      - term: keywords
+        definition: "Comma-separated keywords associated with the article, typically reflecting main subjects."
+      - term: snippet
+        definition: "A short excerpt from the article body text (not the full article)."
+      - term: url
+        definition: "Direct link to the full article on the publisher's website."
+      - term: image_url
+        definition: "URL to the featured image associated with the article. May be null if no image is available."
+      - term: language
+        definition: "ISO 639-1 two-letter language code for the article's language (e.g., en, es, fr, de)."
+      - term: published_at
+        definition: "UTC datetime when the article was published, in ISO 8601 format (e.g., 2024-05-01T14:30:00.000000Z)."
+      - term: source
+        definition: "Domain name of the publishing website (e.g., cnn.com, bbc.co.uk, reuters.com)."
+      - term: categories
+        definition: "Array of category strings the article is classified under."
+      - term: locale
+        definition: "Country code indicating the primary geographic relevance of the article (e.g., us, gb, ca, de)."
+      - term: relevance_score
+        definition: "Float score indicating relevance to the search query (higher = more relevant). Null for non-search requests."
+      - term: similar
+        definition: "Array of related articles returned in the headlines endpoint when include_similar=true."
+
+  - name: Search Parameters
+    description: Parameters used for filtering and searching news articles.
+    terms:
+      - term: search
+        definition: "Free-text search query supporting boolean operators: + (AND), | (OR), - (NOT), \" \" (phrase), * (prefix wildcard), () (grouping)."
+      - term: search_fields
+        definition: "Specifies which fields the search query applies to: title, description, keywords, main_text. Default: title,main_text."
+      - term: locale
+        definition: "Comma-separated ISO 3166-1 alpha-2 country codes to filter articles by geographic relevance (e.g., us,ca,gb)."
+      - term: language
+        definition: "Comma-separated ISO 639-1 language codes to filter articles (e.g., en,es,fr)."
+      - term: categories
+        definition: "Comma-separated category names to include in results."
+      - term: exclude_categories
+        definition: "Comma-separated category names to exclude from results."
+      - term: domains
+        definition: "Comma-separated domain names to restrict results to specific publishers."
+      - term: exclude_domains
+        definition: "Comma-separated domain names to exclude from results."
+      - term: source_ids
+        definition: "Comma-separated source IDs from the Sources endpoint to restrict results."
+      - term: exclude_source_ids
+        definition: "Comma-separated source IDs to exclude from results."
+      - term: published_at
+        definition: "Sort parameter value to order results by publication date (most recent first)."
+      - term: relevance_score
+        definition: "Sort parameter value to order results by relevance to the search query."
+      - term: published_before
+        definition: "DateTime threshold (Y-m-d\\TH:i:s or Y-m-d format) to include only articles published before this time."
+      - term: published_after
+        definition: "DateTime threshold to include only articles published after this time."
+      - term: published_on
+        definition: "Exact date (Y-m-d) to filter articles to a specific day."
+
+  - name: Pagination
+    description: Fields used for paginating through results.
+    terms:
+      - term: limit
+        definition: "Number of results to return per page. Maximum varies by plan."
+      - term: page
+        definition: "Current page number for paginated results (default: 1). The total result set is capped at 20,000 articles."
+      - term: found
+        definition: "Total number of articles matching the query criteria."
+      - term: returned
+        definition: "Number of articles actually returned in the current response."
+
+  - name: Sources
+    description: Terms related to news source management.
+    terms:
+      - term: source_id
+        definition: "Unique identifier for a news source, used in source_ids and exclude_source_ids parameters."
+      - term: domain
+        definition: "The internet domain of a news source (e.g., nytimes.com, bbc.co.uk)."
+      - term: headlines_per_category
+        definition: "In the headlines endpoint, the number of articles to return per category (max 10, default 6)."
+      - term: include_similar
+        definition: "Boolean flag (default true) controlling whether similar articles are included in headlines responses."
+
+  - name: Error Codes
+    description: Error codes returned by The News API.
+    terms:
+      - term: malformed_parameters
+        definition: "HTTP 400 - One or more request parameters failed validation."
+      - term: invalid_api_token
+        definition: "HTTP 401 - The provided api_token is invalid or missing."
+      - term: usage_limit_reached
+        definition: "HTTP 402 - The account has exhausted its plan quota."
+      - term: endpoint_access_restricted
+        definition: "HTTP 403 - The requested endpoint is not available on the current plan."
+      - term: resource_not_found
+        definition: "HTTP 404 - The requested article or resource does not exist."
+      - term: rate_limit_reached
+        definition: "HTTP 429 - Too many requests in the 60-second rate limit window."
+
+tags:
+  - News
+  - Articles
+  - Headlines
+  - Search
+  - International
+  - Categories
+  - Sources
+  - Media
+  - Filtering
+  - Pagination

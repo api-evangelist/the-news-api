@@ -1,0 +1,102 @@
+extends: spectral:oas
+rules:
+
+  # All operations must have api_token parameter
+  news-api-token-required:
+    description: All News API operations must include the api_token query parameter.
+    message: "Operation must include the api_token authentication parameter."
+    severity: error
+    given: "$.paths.*.*.parameters"
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          contains:
+            type: object
+            properties:
+              name:
+                const: api_token
+
+  # Summaries must use Title Case
+  news-api-summary-title-case:
+    description: Operation summaries must use Title Case.
+    message: "Summary should use Title Case."
+    severity: warn
+    given: "$.paths.*.*.summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[A-Z]"
+
+  # All operations must have summaries
+  news-api-summary-exists:
+    description: All operations must have a summary.
+    message: "Operation is missing a summary."
+    severity: error
+    given: "$.paths.*.*"
+    then:
+      function: truthy
+      field: summary
+
+  # All operations must have tags
+  news-api-tags-exist:
+    description: All operations must have at least one tag.
+    message: "Operation must include at least one tag."
+    severity: warn
+    given: "$.paths.*.*"
+    then:
+      function: truthy
+      field: tags
+
+  # 200 responses must exist
+  news-api-response-200:
+    description: All operations must define a 200 response.
+    message: "Operation must define a 200 response."
+    severity: error
+    given: "$.paths.*.*.responses"
+    then:
+      function: truthy
+      field: "200"
+
+  # Server URLs should use HTTPS
+  news-api-server-https:
+    description: Server URLs should use HTTPS.
+    message: "Server URL should use HTTPS."
+    severity: warn
+    given: "$.servers[*].url"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"
+
+  # Path parameters must have descriptions
+  news-api-parameter-descriptions:
+    description: All parameters should include a description.
+    message: "Parameter is missing a description."
+    severity: warn
+    given: "$.paths.*.*.parameters[*]"
+    then:
+      function: truthy
+      field: description
+
+  # 401 response should be defined for secured endpoints
+  news-api-response-401:
+    description: Operations should define a 401 Unauthorized response.
+    message: "Consider defining a 401 response for authentication failure."
+    severity: hint
+    given: "$.paths.*.*.responses"
+    then:
+      function: truthy
+      field: "401"
+
+  # operationIds must be camelCase
+  news-api-operation-id-camel-case:
+    description: operationId should use camelCase.
+    message: "operationId '{{value}}' should use camelCase."
+    severity: hint
+    given: "$.paths.*.*.operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"

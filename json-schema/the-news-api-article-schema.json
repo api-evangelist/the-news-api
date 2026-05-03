@@ -1,0 +1,91 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/the-news-api/main/json-schema/the-news-api-article-schema.json",
+  "title": "The News API Article",
+  "description": "A news article as returned by The News API.",
+  "type": "object",
+  "properties": {
+    "uuid": {
+      "type": "string",
+      "description": "Unique identifier for the article."
+    },
+    "title": {
+      "type": "string",
+      "description": "Article headline."
+    },
+    "description": {
+      "type": "string",
+      "description": "Short description or summary of the article."
+    },
+    "keywords": {
+      "type": "string",
+      "description": "Comma-separated keywords associated with the article."
+    },
+    "snippet": {
+      "type": "string",
+      "description": "Short excerpt from the article body."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the full article on the publisher's website."
+    },
+    "image_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the article's featured image.",
+      "nullable": true
+    },
+    "language": {
+      "type": "string",
+      "description": "Language code of the article (ISO 639-1, e.g., en, es, fr).",
+      "pattern": "^[a-z]{2}$"
+    },
+    "published_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Publication datetime in UTC (ISO 8601 format)."
+    },
+    "source": {
+      "type": "string",
+      "description": "Domain name of the publishing source (e.g., cnn.com)."
+    },
+    "categories": {
+      "type": "array",
+      "description": "Categories the article belongs to.",
+      "items": {
+        "type": "string",
+        "enum": [
+          "general",
+          "business",
+          "sports",
+          "tech",
+          "science",
+          "health",
+          "entertainment",
+          "politics",
+          "food",
+          "travel"
+        ]
+      }
+    },
+    "locale": {
+      "type": "string",
+      "description": "Country/locale code where the article is primarily relevant (e.g., us, gb, ca)."
+    },
+    "relevance_score": {
+      "type": "number",
+      "nullable": true,
+      "description": "Relevance score for search results (higher = more relevant). Null for non-search endpoints."
+    },
+    "similar": {
+      "type": "array",
+      "description": "Similar articles (only present in headlines response).",
+      "items": {
+        "$ref": "#"
+      }
+    }
+  },
+  "required": ["uuid", "title", "url", "published_at", "source"],
+  "additionalProperties": false
+}

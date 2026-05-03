@@ -1,0 +1,35 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "news": "https://www.thenewsapi.com/vocabulary/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Article": "schema:NewsArticle",
+    "Source": "schema:NewsMediaOrganization",
+
+    "uuid": "schema:identifier",
+    "title": "schema:headline",
+    "description": "schema:description",
+    "snippet": "schema:abstract",
+    "url": { "@id": "schema:url", "@type": "@id" },
+    "image_url": { "@id": "schema:image", "@type": "@id" },
+    "language": "schema:inLanguage",
+    "published_at": { "@id": "schema:datePublished", "@type": "xsd:dateTime" },
+    "source": "schema:publisher",
+    "locale": "schema:countryOfOrigin",
+    "keywords": "schema:keywords",
+    "categories": "schema:articleSection",
+    "relevance_score": "news:relevanceScore",
+    "similar": "schema:mentions",
+
+    "source_id": "schema:identifier",
+    "domain": "schema:url",
+
+    "meta": "news:meta",
+    "found": "news:totalResults",
+    "returned": "news:returnedResults",
+    "limit": "news:pageSize",
+    "page": "news:pageNumber"
+  }
+}

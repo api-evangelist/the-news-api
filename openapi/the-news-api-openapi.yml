@@ -1,0 +1,843 @@
+openapi: 3.0.3
+info:
+  title: The News API
+  description: >-
+    The News API provides access to worldwide news articles and top stories from
+    over 40,000 sources in 50 countries. Search and filter news by keyword,
+    category, language, country, and date. All endpoints require an API token
+    obtained by registering at thenewsapi.com.
+  version: 1.0.0
+  contact:
+    url: https://www.thenewsapi.com/
+  termsOfService: https://www.thenewsapi.com/terms
+servers:
+  - url: https://api.thenewsapi.com/v1
+security:
+  - apiToken: []
+paths:
+  /news/headlines:
+    get:
+      operationId: getHeadlines
+      summary: Get News Headlines
+      description: >-
+        Retrieve the latest headlines organized by category. Available on
+        Standard plan and above. Returns articles grouped by category with
+        optional similar article suggestions.
+      tags:
+        - Headlines
+      parameters:
+        - name: api_token
+          in: query
+          required: true
+          description: Your API authentication token.
+          schema:
+            type: string
+        - name: locale
+          in: query
+          required: false
+          description: >-
+            Comma-separated list of country codes to filter by (e.g., us,ca,gb).
+          schema:
+            type: string
+        - name: language
+          in: query
+          required: false
+          description: >-
+            Comma-separated list of language codes to filter by (e.g., en,es,fr).
+          schema:
+            type: string
+        - name: categories
+          in: query
+          required: false
+          description: >-
+            Comma-separated list of categories: general, science, sports,
+            business, health, entertainment, tech, politics, food, travel.
+          schema:
+            type: string
+        - name: domains
+          in: query
+          required: false
+          description: Comma-separated list of domains to include.
+          schema:
+            type: string
+        - name: exclude_domains
+          in: query
+          required: false
+          description: Comma-separated list of domains to exclude.
+          schema:
+            type: string
+        - name: source_ids
+          in: query
+          required: false
+          description: Comma-separated list of source IDs to include.
+          schema:
+            type: string
+        - name: exclude_source_ids
+          in: query
+          required: false
+          description: Comma-separated list of source IDs to exclude.
+          schema:
+            type: string
+        - name: published_on
+          in: query
+          required: false
+          description: Filter to articles published on a specific date (Y-m-d format).
+          schema:
+            type: string
+            format: date
+        - name: headlines_per_category
+          in: query
+          required: false
+          description: Number of articles per category (max 10, default 6).
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 10
+            default: 6
+        - name: include_similar
+          in: query
+          required: false
+          description: Include similar articles in the response (default true).
+          schema:
+            type: boolean
+            default: true
+      responses:
+        "200":
+          description: Headlines organized by category.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HeadlinesResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "402":
+          $ref: "#/components/responses/PaymentRequired"
+        "403":
+          $ref: "#/components/responses/Forbidden"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /news/top:
+    get:
+      operationId: getTopStories
+      summary: Get Top Stories
+      description: >-
+        Retrieve live and historical top stories globally or filtered by
+        keyword, category, country, language, domain, or date. Supports
+        advanced boolean search operators.
+      tags:
+        - Top Stories
+      parameters:
+        - name: api_token
+          in: query
+          required: true
+          description: Your API authentication token.
+          schema:
+            type: string
+        - name: search
+          in: query
+          required: false
+          description: >-
+            Search query with boolean operators: + (AND), | (OR), - (negation),
+            " (phrase), * (prefix), () (precedence).
+          schema:
+            type: string
+        - name: search_fields
+          in: query
+          required: false
+          description: >-
+            Comma-separated fields to search: title, description, keywords,
+            main_text. Default: title,main_text.
+          schema:
+            type: string
+        - name: locale
+          in: query
+          required: false
+          description: Comma-separated country codes to filter by.
+          schema:
+            type: string
+        - name: categories
+          in: query
+          required: false
+          description: >-
+            Comma-separated categories: general, science, sports, business,
+            health, entertainment, tech, politics, food, travel.
+          schema:
+            type: string
+        - name: exclude_categories
+          in: query
+          required: false
+          description: Comma-separated categories to exclude.
+          schema:
+            type: string
+        - name: domains
+          in: query
+          required: false
+          description: Comma-separated domains to include.
+          schema:
+            type: string
+        - name: exclude_domains
+          in: query
+          required: false
+          description: Comma-separated domains to exclude.
+          schema:
+            type: string
+        - name: source_ids
+          in: query
+          required: false
+          description: Comma-separated source IDs to include.
+          schema:
+            type: string
+        - name: exclude_source_ids
+          in: query
+          required: false
+          description: Comma-separated source IDs to exclude.
+          schema:
+            type: string
+        - name: language
+          in: query
+          required: false
+          description: Comma-separated language codes to filter by.
+          schema:
+            type: string
+        - name: published_before
+          in: query
+          required: false
+          description: Filter to articles published before this datetime (Y-m-d\TH:i:s).
+          schema:
+            type: string
+        - name: published_after
+          in: query
+          required: false
+          description: Filter to articles published after this datetime.
+          schema:
+            type: string
+        - name: published_on
+          in: query
+          required: false
+          description: Filter to articles published on this exact date (Y-m-d).
+          schema:
+            type: string
+            format: date
+        - name: sort
+          in: query
+          required: false
+          description: Sort by published_at (default) or relevance_score.
+          schema:
+            type: string
+            enum:
+              - published_at
+              - relevance_score
+        - name: limit
+          in: query
+          required: false
+          description: Number of results per page (plan-dependent maximum).
+          schema:
+            type: integer
+            minimum: 1
+        - name: page
+          in: query
+          required: false
+          description: Page number for pagination (default 1, max result set 20,000).
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        "200":
+          description: List of top news articles.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /news/all:
+    get:
+      operationId: getAllNews
+      summary: Get All News
+      description: >-
+        Access the complete historical and live article database. Same filtering
+        and search capabilities as the Top Stories endpoint but covers the full
+        news archive.
+      tags:
+        - All News
+      parameters:
+        - name: api_token
+          in: query
+          required: true
+          description: Your API authentication token.
+          schema:
+            type: string
+        - name: search
+          in: query
+          required: false
+          description: >-
+            Search query with boolean operators: + (AND), | (OR), - (negation),
+            " (phrase), * (prefix), () (precedence).
+          schema:
+            type: string
+        - name: search_fields
+          in: query
+          required: false
+          description: Fields to search (title, description, keywords, main_text).
+          schema:
+            type: string
+        - name: locale
+          in: query
+          required: false
+          description: Comma-separated country codes.
+          schema:
+            type: string
+        - name: categories
+          in: query
+          required: false
+          description: Comma-separated categories to include.
+          schema:
+            type: string
+        - name: exclude_categories
+          in: query
+          required: false
+          description: Comma-separated categories to exclude.
+          schema:
+            type: string
+        - name: domains
+          in: query
+          required: false
+          description: Comma-separated domains to include.
+          schema:
+            type: string
+        - name: exclude_domains
+          in: query
+          required: false
+          description: Comma-separated domains to exclude.
+          schema:
+            type: string
+        - name: source_ids
+          in: query
+          required: false
+          description: Comma-separated source IDs to include.
+          schema:
+            type: string
+        - name: exclude_source_ids
+          in: query
+          required: false
+          description: Comma-separated source IDs to exclude.
+          schema:
+            type: string
+        - name: language
+          in: query
+          required: false
+          description: Comma-separated language codes.
+          schema:
+            type: string
+        - name: published_before
+          in: query
+          required: false
+          description: Filter to articles published before this datetime.
+          schema:
+            type: string
+        - name: published_after
+          in: query
+          required: false
+          description: Filter to articles published after this datetime.
+          schema:
+            type: string
+        - name: published_on
+          in: query
+          required: false
+          description: Filter to articles published on this exact date.
+          schema:
+            type: string
+            format: date
+        - name: sort
+          in: query
+          required: false
+          description: Sort by published_at or relevance_score.
+          schema:
+            type: string
+            enum:
+              - published_at
+              - relevance_score
+        - name: limit
+          in: query
+          required: false
+          description: Number of results per page.
+          schema:
+            type: integer
+            minimum: 1
+        - name: page
+          in: query
+          required: false
+          description: Page number for pagination.
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        "200":
+          description: List of news articles from the full archive.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsListResponse"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "429":
+          $ref: "#/components/responses/RateLimited"
+
+  /news/similar/{uuid}:
+    get:
+      operationId: getSimilarNews
+      summary: Get Similar News Articles
+      description: >-
+        Find articles similar to a specific article identified by its UUID.
+        Returns articles ranked by relevance_score indicating similarity
+        strength.
+      tags:
+        - Similar News
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: UUID of the article to find similar articles for.
+          schema:
+            type: string
+        - name: api_token
+          in: query
+          required: true
+          description: Your API authentication token.
+          schema:
+            type: string
+        - name: language
+          in: query
+          required: false
+          description: Comma-separated language codes to filter by.
+          schema:
+            type: string
+        - name: categories
+          in: query
+          required: false
+          description: Comma-separated categories to filter by.
+          schema:
+            type: string
+        - name: exclude_categories
+          in: query
+          required: false
+          description: Comma-separated categories to exclude.
+          schema:
+            type: string
+        - name: domains
+          in: query
+          required: false
+          description: Comma-separated domains to include.
+          schema:
+            type: string
+        - name: exclude_domains
+          in: query
+          required: false
+          description: Comma-separated domains to exclude.
+          schema:
+            type: string
+        - name: source_ids
+          in: query
+          required: false
+          description: Comma-separated source IDs to include.
+          schema:
+            type: string
+        - name: exclude_source_ids
+          in: query
+          required: false
+          description: Comma-separated source IDs to exclude.
+          schema:
+            type: string
+        - name: published_before
+          in: query
+          required: false
+          description: Filter by publication date upper bound.
+          schema:
+            type: string
+        - name: published_after
+          in: query
+          required: false
+          description: Filter by publication date lower bound.
+          schema:
+            type: string
+        - name: published_on
+          in: query
+          required: false
+          description: Filter to exact publication date.
+          schema:
+            type: string
+            format: date
+        - name: limit
+          in: query
+          required: false
+          description: Number of similar articles to return.
+          schema:
+            type: integer
+            minimum: 1
+        - name: page
+          in: query
+          required: false
+          description: Page number for pagination.
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        "200":
+          description: List of similar articles ranked by relevance score.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/NewsListResponse"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /news/uuid/{uuid}:
+    get:
+      operationId: getNewsByUUID
+      summary: Get News Article By UUID
+      description: >-
+        Retrieve a specific news article by its unique UUID identifier.
+      tags:
+        - Articles
+      parameters:
+        - name: uuid
+          in: path
+          required: true
+          description: UUID of the article to retrieve.
+          schema:
+            type: string
+        - name: api_token
+          in: query
+          required: true
+          description: Your API authentication token.
+          schema:
+            type: string
+      responses:
+        "200":
+          description: The requested article.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Article"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+  /news/sources:
+    get:
+      operationId: getNewsSources
+      summary: Get News Sources
+      description: >-
+        Retrieve available news sources and their metadata including domain,
+        language, locale, and categories covered. Returns 50 results per page.
+      tags:
+        - Sources
+      parameters:
+        - name: api_token
+          in: query
+          required: true
+          description: Your API authentication token.
+          schema:
+            type: string
+        - name: categories
+          in: query
+          required: false
+          description: Comma-separated categories to filter sources by.
+          schema:
+            type: string
+        - name: exclude_categories
+          in: query
+          required: false
+          description: Comma-separated categories to exclude.
+          schema:
+            type: string
+        - name: language
+          in: query
+          required: false
+          description: Comma-separated language codes to filter by.
+          schema:
+            type: string
+        - name: page
+          in: query
+          required: false
+          description: Page number for pagination (50 sources per page).
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        "200":
+          description: List of news sources.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SourcesResponse"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+
+components:
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      name: api_token
+      in: query
+
+  schemas:
+    Article:
+      type: object
+      description: A news article.
+      properties:
+        uuid:
+          type: string
+          description: Unique identifier for the article.
+        title:
+          type: string
+          description: Article headline.
+        description:
+          type: string
+          description: Short description of the article.
+        keywords:
+          type: string
+          description: Comma-separated keywords associated with the article.
+        snippet:
+          type: string
+          description: Short excerpt from the article body.
+        url:
+          type: string
+          format: uri
+          description: URL to the full article.
+        image_url:
+          type: string
+          format: uri
+          description: URL to the article's featured image.
+        language:
+          type: string
+          description: Language code of the article (e.g., en, es, fr).
+        published_at:
+          type: string
+          format: date-time
+          description: Publication datetime in UTC.
+        source:
+          type: string
+          description: Domain of the publishing source.
+        categories:
+          type: array
+          items:
+            type: string
+          description: Categories the article belongs to.
+        locale:
+          type: string
+          description: Country/locale code (e.g., us, gb, ca).
+        relevance_score:
+          type: number
+          nullable: true
+          description: Relevance score for search results or similarity matching.
+
+    ArticleWithSimilar:
+      allOf:
+        - $ref: "#/components/schemas/Article"
+        - type: object
+          properties:
+            similar:
+              type: array
+              items:
+                $ref: "#/components/schemas/Article"
+              description: Similar articles related to this article.
+
+    Meta:
+      type: object
+      description: Pagination metadata.
+      properties:
+        found:
+          type: integer
+          description: Total number of articles matching the query.
+        returned:
+          type: integer
+          description: Number of articles returned on this page.
+        limit:
+          type: integer
+          description: Maximum results per page.
+        page:
+          type: integer
+          description: Current page number.
+
+    NewsListResponse:
+      type: object
+      properties:
+        meta:
+          $ref: "#/components/schemas/Meta"
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Article"
+          description: Array of news articles.
+
+    HeadlinesResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Articles organized by category.
+          properties:
+            general:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            business:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            sports:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            tech:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            science:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            health:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            entertainment:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            politics:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            food:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+            travel:
+              type: array
+              items:
+                $ref: "#/components/schemas/ArticleWithSimilar"
+
+    Source:
+      type: object
+      description: A news source.
+      properties:
+        source_id:
+          type: string
+          description: Unique identifier for the source.
+        domain:
+          type: string
+          description: Domain name of the source (e.g., cnn.com).
+        language:
+          type: string
+          description: Primary language of the source.
+        locale:
+          type: string
+          description: Country/locale code.
+        categories:
+          type: array
+          items:
+            type: string
+          description: Categories covered by this source.
+
+    SourcesResponse:
+      type: object
+      properties:
+        meta:
+          type: object
+          properties:
+            found:
+              type: integer
+            returned:
+              type: integer
+            limit:
+              type: integer
+            page:
+              type: integer
+        data:
+          type: array
+          items:
+            $ref: "#/components/schemas/Source"
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
+
+  responses:
+    BadRequest:
+      description: Bad request - malformed parameters.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Unauthorized:
+      description: Unauthorized - invalid API token.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    PaymentRequired:
+      description: Payment required - usage limit reached.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    Forbidden:
+      description: Forbidden - endpoint access restricted on your plan.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    NotFound:
+      description: Not found - resource does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+    RateLimited:
+      description: Too many requests - rate limit reached (60-second window).
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+tags:
+  - name: Headlines
+    description: Latest headlines organized by category.
+  - name: Top Stories
+    description: Top stories filtered by keyword, category, and date.
+  - name: All News
+    description: Full historical and live article database search.
+  - name: Similar News
+    description: Articles similar to a given article.
+  - name: Articles
+    description: Retrieve specific articles by UUID.
+  - name: Sources
+    description: Available news sources and their metadata.

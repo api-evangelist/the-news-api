@@ -1,0 +1,452 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "The News API"
+  description: "Worldwide news API providing access to articles from 40,000+ sources in 50 countries with filtering by keyword, category, language, and date."
+  tags:
+    - News
+    - Articles
+    - Headlines
+    - Search
+    - International
+  created: "2026-05-03"
+  modified: "2026-05-03"
+
+binds:
+  - namespace: env
+    keys:
+      NEWS_API_TOKEN: NEWS_API_TOKEN
+
+capability:
+  consumes:
+    - type: http
+      namespace: the-news-api
+      baseUri: https://api.thenewsapi.com/v1
+      description: "The News API for searching and accessing worldwide news articles."
+      authentication:
+        type: apikey
+        key: api_token
+        value: "{{NEWS_API_TOKEN}}"
+        placement: query
+      resources:
+        - name: headlines
+          path: /news/headlines
+          description: "Get latest headlines organized by category."
+          operations:
+            - name: get-headlines
+              method: GET
+              description: "Retrieve latest headlines organized by category with optional similar article suggestions."
+              inputParameters:
+                - name: locale
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated country codes (e.g., us,ca,gb)."
+                - name: language
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated language codes (e.g., en,es)."
+                - name: categories
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated categories to include."
+                - name: headlines_per_category
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Articles per category (max 10, default 6)."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: top-stories
+          path: /news/top
+          description: "Get top stories with advanced filtering and boolean search."
+          operations:
+            - name: get-top-stories
+              method: GET
+              description: "Retrieve top stories filtered by keyword, category, language, and date."
+              inputParameters:
+                - name: search
+                  in: query
+                  type: string
+                  required: false
+                  description: "Search query with boolean operators."
+                - name: categories
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated categories to filter by."
+                - name: locale
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated country codes."
+                - name: language
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated language codes."
+                - name: published_after
+                  in: query
+                  type: string
+                  required: false
+                  description: "Filter to articles published after this datetime."
+                - name: published_before
+                  in: query
+                  type: string
+                  required: false
+                  description: "Filter to articles published before this datetime."
+                - name: sort
+                  in: query
+                  type: string
+                  required: false
+                  description: "Sort by published_at or relevance_score."
+                - name: limit
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Results per page."
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Page number."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: all-news
+          path: /news/all
+          description: "Search the full historical and live article database."
+          operations:
+            - name: search-all-news
+              method: GET
+              description: "Search all news articles including full historical archive."
+              inputParameters:
+                - name: search
+                  in: query
+                  type: string
+                  required: false
+                  description: "Search query with boolean operators."
+                - name: categories
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated categories."
+                - name: locale
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated country codes."
+                - name: language
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated language codes."
+                - name: domains
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated domains to include."
+                - name: published_after
+                  in: query
+                  type: string
+                  required: false
+                  description: "Published after datetime."
+                - name: published_before
+                  in: query
+                  type: string
+                  required: false
+                  description: "Published before datetime."
+                - name: sort
+                  in: query
+                  type: string
+                  required: false
+                  description: "Sort by published_at or relevance_score."
+                - name: limit
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Results per page."
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Page number."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: similar-news
+          path: /news/similar/{uuid}
+          description: "Find articles similar to a specific article by UUID."
+          operations:
+            - name: get-similar-news
+              method: GET
+              description: "Get articles similar to a specific article ranked by relevance score."
+              inputParameters:
+                - name: uuid
+                  in: path
+                  type: string
+                  required: true
+                  description: "UUID of the reference article."
+                - name: language
+                  in: query
+                  type: string
+                  required: false
+                  description: "Comma-separated language codes."
+                - name: limit
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Number of similar articles to return."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: article-by-uuid
+          path: /news/uuid/{uuid}
+          description: "Retrieve a specific article by its UUID."
+          operations:
+            - name: get-article-by-uuid
+              method: GET
+              description: "Get a specific news article by its unique identifier."
+              inputParameters:
+                - name: uuid
+                  in: path
+                  type: string
+                  required: true
+                  description: "UUID of the article to retrieve."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+        - name: sources
+          path: /news/sources
+          description: "List available news sources and their metadata."
+          operations:
+            - name: get-news-sources
+              method: GET
+              description: "Get available news sources with domain, language, and category metadata."
+              inputParameters:
+                - name: language
+                  in: query
+                  type: string
+                  required: false
+                  description: "Filter sources by language."
+                - name: categories
+                  in: query
+                  type: string
+                  required: false
+                  description: "Filter sources by category."
+                - name: page
+                  in: query
+                  type: integer
+                  required: false
+                  description: "Page number (50 per page)."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: the-news-api-rest
+      resources:
+        - path: /v1/headlines
+          name: headlines
+          description: "Latest news headlines by category."
+          operations:
+            - method: GET
+              name: get-headlines
+              description: "Get latest news headlines organized by category."
+              call: "the-news-api.get-headlines"
+              with:
+                locale: "rest.locale"
+                language: "rest.language"
+                categories: "rest.categories"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/top-stories
+          name: top-stories
+          description: "Top news stories with filtering."
+          operations:
+            - method: GET
+              name: get-top-stories
+              description: "Get top stories filtered by keyword and category."
+              call: "the-news-api.get-top-stories"
+              with:
+                search: "rest.search"
+                categories: "rest.categories"
+                locale: "rest.locale"
+                language: "rest.language"
+                limit: "rest.limit"
+                page: "rest.page"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/articles
+          name: all-news
+          description: "All news articles from full archive."
+          operations:
+            - method: GET
+              name: search-all-news
+              description: "Search the complete news archive."
+              call: "the-news-api.search-all-news"
+              with:
+                search: "rest.search"
+                categories: "rest.categories"
+                language: "rest.language"
+                limit: "rest.limit"
+                page: "rest.page"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/articles/similar/{uuid}
+          name: similar-news
+          description: "Similar news articles."
+          operations:
+            - method: GET
+              name: get-similar-news
+              description: "Get articles similar to a given article."
+              call: "the-news-api.get-similar-news"
+              with:
+                uuid: "rest.uuid"
+                language: "rest.language"
+                limit: "rest.limit"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/articles/{uuid}
+          name: article-by-uuid
+          description: "Specific article by UUID."
+          operations:
+            - method: GET
+              name: get-article-by-uuid
+              description: "Get a specific article by UUID."
+              call: "the-news-api.get-article-by-uuid"
+              with:
+                uuid: "rest.uuid"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/sources
+          name: sources
+          description: "Available news sources."
+          operations:
+            - method: GET
+              name: get-news-sources
+              description: "Get available news sources."
+              call: "the-news-api.get-news-sources"
+              with:
+                language: "rest.language"
+                categories: "rest.categories"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: the-news-api-mcp
+      transport: http
+      tools:
+        - name: get-headlines
+          description: "Get latest news headlines organized by category."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "the-news-api.get-headlines"
+          with:
+            locale: "tools.locale"
+            language: "tools.language"
+            categories: "tools.categories"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-top-stories
+          description: "Get top news stories with optional keyword search and category filtering."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "the-news-api.get-top-stories"
+          with:
+            search: "tools.search"
+            categories: "tools.categories"
+            locale: "tools.locale"
+            language: "tools.language"
+            limit: "tools.limit"
+            page: "tools.page"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: search-all-news
+          description: "Search the complete historical and live news archive with boolean search operators."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "the-news-api.search-all-news"
+          with:
+            search: "tools.search"
+            categories: "tools.categories"
+            language: "tools.language"
+            domains: "tools.domains"
+            published_after: "tools.published_after"
+            published_before: "tools.published_before"
+            limit: "tools.limit"
+            page: "tools.page"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-similar-news
+          description: "Find news articles similar to a given article by UUID."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "the-news-api.get-similar-news"
+          with:
+            uuid: "tools.uuid"
+            language: "tools.language"
+            limit: "tools.limit"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-article-by-uuid
+          description: "Retrieve a specific news article by its UUID."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "the-news-api.get-article-by-uuid"
+          with:
+            uuid: "tools.uuid"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-news-sources
+          description: "List available news sources with metadata including domain, language, and categories covered."
+          hints:
+            readOnly: true
+            idempotent: true
+          call: "the-news-api.get-news-sources"
+          with:
+            language: "tools.language"
+            categories: "tools.categories"
+            page: "tools.page"
+          outputParameters:
+            - type: object
+              mapping: "$."

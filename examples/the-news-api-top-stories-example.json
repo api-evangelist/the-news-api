@@ -1,0 +1,56 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://api.thenewsapi.com/v1/news/top",
+    "params": {
+      "api_token": "YOUR_API_TOKEN",
+      "search": "artificial intelligence",
+      "categories": "tech,business",
+      "language": "en",
+      "locale": "us",
+      "sort": "published_at",
+      "limit": 3,
+      "page": 1
+    }
+  },
+  "response": {
+    "meta": {
+      "found": 1847,
+      "returned": 3,
+      "limit": 3,
+      "page": 1
+    },
+    "data": [
+      {
+        "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "title": "OpenAI Launches New AI Model With Improved Reasoning Capabilities",
+        "description": "OpenAI announced a major upgrade to its flagship AI model, claiming significant improvements in reasoning and problem-solving tasks.",
+        "keywords": "openai, artificial intelligence, GPT, machine learning, technology",
+        "snippet": "OpenAI on Thursday unveiled a new version of its most capable artificial intelligence model...",
+        "url": "https://www.techcrunch.com/2024/05/01/openai-new-model-reasoning",
+        "image_url": "https://techcrunch.com/images/openai-logo.jpg",
+        "language": "en",
+        "published_at": "2024-05-01T14:30:00.000000Z",
+        "source": "techcrunch.com",
+        "categories": ["tech", "business"],
+        "locale": "us",
+        "relevance_score": 12.847
+      },
+      {
+        "uuid": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+        "title": "Congress Debates New AI Regulation Framework",
+        "description": "Bipartisan lawmakers are working on legislation to govern the development and deployment of artificial intelligence systems in the United States.",
+        "keywords": "artificial intelligence, regulation, congress, legislation, tech policy",
+        "snippet": "Senate lawmakers convened hearings this week to examine proposed artificial intelligence regulations...",
+        "url": "https://www.politico.com/news/2024/05/01/ai-regulation-congress",
+        "image_url": "https://politico.com/images/congress-ai.jpg",
+        "language": "en",
+        "published_at": "2024-05-01T12:00:00.000000Z",
+        "source": "politico.com",
+        "categories": ["tech", "politics"],
+        "locale": "us",
+        "relevance_score": 11.203
+      }
+    ]
+  }
+}

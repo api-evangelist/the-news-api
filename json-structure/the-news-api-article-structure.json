@@ -1,0 +1,30 @@
+{
+  "name": "The News API Article",
+  "description": "Structure of a news article as returned by The News API.",
+  "fields": [
+    { "name": "uuid", "type": "string", "required": true, "description": "Unique article identifier (UUID format)." },
+    { "name": "title", "type": "string", "required": true, "description": "Article headline." },
+    { "name": "description", "type": "string", "required": false, "description": "Short summary of the article." },
+    { "name": "keywords", "type": "string", "required": false, "description": "Comma-separated keywords." },
+    { "name": "snippet", "type": "string", "required": false, "description": "Short text excerpt from the article." },
+    { "name": "url", "type": "string (uri)", "required": true, "description": "Link to the full article." },
+    { "name": "image_url", "type": "string (uri) | null", "required": false, "description": "Featured image URL." },
+    { "name": "language", "type": "string", "required": false, "description": "ISO 639-1 language code (e.g., en)." },
+    { "name": "published_at", "type": "string (date-time)", "required": true, "description": "UTC publication timestamp." },
+    { "name": "source", "type": "string", "required": true, "description": "Publishing domain (e.g., cnn.com)." },
+    {
+      "name": "categories",
+      "type": "array<string>",
+      "required": false,
+      "description": "Categories: general, business, sports, tech, science, health, entertainment, politics, food, travel."
+    },
+    { "name": "locale", "type": "string", "required": false, "description": "Country code (e.g., us, gb)." },
+    { "name": "relevance_score", "type": "number | null", "required": false, "description": "Search relevance score." },
+    {
+      "name": "similar",
+      "type": "array<Article>",
+      "required": false,
+      "description": "Similar articles (headlines endpoint only)."
+    }
+  ]
+}
