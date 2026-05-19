@@ -1,0 +1,161 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: The News API — Similar News
+  description: 'The News API — Similar News. 1 operations. Lead operation: Get Similar News Articles. Self-contained Naftiko
+    capability covering one The News Api business surface.'
+  tags:
+  - The News Api
+  - Similar News
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    THE_NEWS_API_API_KEY: THE_NEWS_API_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: the-news-similar-news
+    baseUri: https://api.thenewsapi.com/v1
+    description: The News API — Similar News business capability. Self-contained, no shared references.
+    resources:
+    - name: news-similar-uuid
+      path: /news/similar/{uuid}
+      operations:
+      - name: getsimilarnews
+        method: GET
+        description: Get Similar News Articles
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: uuid
+          in: path
+          type: string
+          description: UUID of the article to find similar articles for.
+          required: true
+        - name: api_token
+          in: query
+          type: string
+          description: Your API authentication token.
+          required: true
+        - name: language
+          in: query
+          type: string
+          description: Comma-separated language codes to filter by.
+        - name: categories
+          in: query
+          type: string
+          description: Comma-separated categories to filter by.
+        - name: exclude_categories
+          in: query
+          type: string
+          description: Comma-separated categories to exclude.
+        - name: domains
+          in: query
+          type: string
+          description: Comma-separated domains to include.
+        - name: exclude_domains
+          in: query
+          type: string
+          description: Comma-separated domains to exclude.
+        - name: source_ids
+          in: query
+          type: string
+          description: Comma-separated source IDs to include.
+        - name: exclude_source_ids
+          in: query
+          type: string
+          description: Comma-separated source IDs to exclude.
+        - name: published_before
+          in: query
+          type: string
+          description: Filter by publication date upper bound.
+        - name: published_after
+          in: query
+          type: string
+          description: Filter by publication date lower bound.
+        - name: published_on
+          in: query
+          type: string
+          description: Filter to exact publication date.
+        - name: limit
+          in: query
+          type: integer
+          description: Number of similar articles to return.
+        - name: page
+          in: query
+          type: integer
+          description: Page number for pagination.
+    authentication:
+      type: apikey
+      key: api_token
+      value: '{{env.THE_NEWS_API_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: the-news-similar-news-rest
+    port: 8080
+    description: REST adapter for The News API — Similar News. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/news/similar/{uuid}
+      name: news-similar-uuid
+      description: REST surface for news-similar-uuid.
+      operations:
+      - method: GET
+        name: getsimilarnews
+        description: Get Similar News Articles
+        call: the-news-similar-news.getsimilarnews
+        with:
+          uuid: rest.uuid
+          api_token: rest.api_token
+          language: rest.language
+          categories: rest.categories
+          exclude_categories: rest.exclude_categories
+          domains: rest.domains
+          exclude_domains: rest.exclude_domains
+          source_ids: rest.source_ids
+          exclude_source_ids: rest.exclude_source_ids
+          published_before: rest.published_before
+          published_after: rest.published_after
+          published_on: rest.published_on
+          limit: rest.limit
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: the-news-similar-news-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for The News API — Similar News. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: get-similar-news-articles
+      description: Get Similar News Articles
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: the-news-similar-news.getsimilarnews
+      with:
+        uuid: tools.uuid
+        api_token: tools.api_token
+        language: tools.language
+        categories: tools.categories
+        exclude_categories: tools.exclude_categories
+        domains: tools.domains
+        exclude_domains: tools.exclude_domains
+        source_ids: tools.source_ids
+        exclude_source_ids: tools.exclude_source_ids
+        published_before: tools.published_before
+        published_after: tools.published_after
+        published_on: tools.published_on
+        limit: tools.limit
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.

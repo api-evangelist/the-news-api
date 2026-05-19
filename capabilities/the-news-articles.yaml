@@ -1,0 +1,89 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: The News API — Articles
+  description: 'The News API — Articles. 1 operations. Lead operation: Get News Article By UUID. Self-contained Naftiko capability
+    covering one The News Api business surface.'
+  tags:
+  - The News Api
+  - Articles
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    THE_NEWS_API_API_KEY: THE_NEWS_API_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: the-news-articles
+    baseUri: https://api.thenewsapi.com/v1
+    description: The News API — Articles business capability. Self-contained, no shared references.
+    resources:
+    - name: news-uuid-uuid
+      path: /news/uuid/{uuid}
+      operations:
+      - name: getnewsbyuuid
+        method: GET
+        description: Get News Article By UUID
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: uuid
+          in: path
+          type: string
+          description: UUID of the article to retrieve.
+          required: true
+        - name: api_token
+          in: query
+          type: string
+          description: Your API authentication token.
+          required: true
+    authentication:
+      type: apikey
+      key: api_token
+      value: '{{env.THE_NEWS_API_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: the-news-articles-rest
+    port: 8080
+    description: REST adapter for The News API — Articles. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/news/uuid/{uuid}
+      name: news-uuid-uuid
+      description: REST surface for news-uuid-uuid.
+      operations:
+      - method: GET
+        name: getnewsbyuuid
+        description: Get News Article By UUID
+        call: the-news-articles.getnewsbyuuid
+        with:
+          uuid: rest.uuid
+          api_token: rest.api_token
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: the-news-articles-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for The News API — Articles. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-news-article-uuid
+      description: Get News Article By UUID
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: the-news-articles.getnewsbyuuid
+      with:
+        uuid: tools.uuid
+        api_token: tools.api_token
+      outputParameters:
+      - type: object
+        mapping: $.

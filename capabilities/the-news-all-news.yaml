@@ -1,0 +1,178 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: The News API — All News
+  description: 'The News API — All News. 1 operations. Lead operation: Get All News. Self-contained Naftiko capability covering
+    one The News Api business surface.'
+  tags:
+  - The News Api
+  - All News
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    THE_NEWS_API_API_KEY: THE_NEWS_API_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: the-news-all-news
+    baseUri: https://api.thenewsapi.com/v1
+    description: The News API — All News business capability. Self-contained, no shared references.
+    resources:
+    - name: news-all
+      path: /news/all
+      operations:
+      - name: getallnews
+        method: GET
+        description: Get All News
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: api_token
+          in: query
+          type: string
+          description: Your API authentication token.
+          required: true
+        - name: search
+          in: query
+          type: string
+          description: 'Search query with boolean operators: + (AND), | (OR), - (negation), " (phrase), * (prefix), () (precedence).'
+        - name: search_fields
+          in: query
+          type: string
+          description: Fields to search (title, description, keywords, main_text).
+        - name: locale
+          in: query
+          type: string
+          description: Comma-separated country codes.
+        - name: categories
+          in: query
+          type: string
+          description: Comma-separated categories to include.
+        - name: exclude_categories
+          in: query
+          type: string
+          description: Comma-separated categories to exclude.
+        - name: domains
+          in: query
+          type: string
+          description: Comma-separated domains to include.
+        - name: exclude_domains
+          in: query
+          type: string
+          description: Comma-separated domains to exclude.
+        - name: source_ids
+          in: query
+          type: string
+          description: Comma-separated source IDs to include.
+        - name: exclude_source_ids
+          in: query
+          type: string
+          description: Comma-separated source IDs to exclude.
+        - name: language
+          in: query
+          type: string
+          description: Comma-separated language codes.
+        - name: published_before
+          in: query
+          type: string
+          description: Filter to articles published before this datetime.
+        - name: published_after
+          in: query
+          type: string
+          description: Filter to articles published after this datetime.
+        - name: published_on
+          in: query
+          type: string
+          description: Filter to articles published on this exact date.
+        - name: sort
+          in: query
+          type: string
+          description: Sort by published_at or relevance_score.
+        - name: limit
+          in: query
+          type: integer
+          description: Number of results per page.
+        - name: page
+          in: query
+          type: integer
+          description: Page number for pagination.
+    authentication:
+      type: apikey
+      key: api_token
+      value: '{{env.THE_NEWS_API_API_KEY}}'
+      placement: query
+  exposes:
+  - type: rest
+    namespace: the-news-all-news-rest
+    port: 8080
+    description: REST adapter for The News API — All News. One Spectral-compliant resource per consumed operation, prefixed
+      with /v1.
+    resources:
+    - path: /v1/news/all
+      name: news-all
+      description: REST surface for news-all.
+      operations:
+      - method: GET
+        name: getallnews
+        description: Get All News
+        call: the-news-all-news.getallnews
+        with:
+          api_token: rest.api_token
+          search: rest.search
+          search_fields: rest.search_fields
+          locale: rest.locale
+          categories: rest.categories
+          exclude_categories: rest.exclude_categories
+          domains: rest.domains
+          exclude_domains: rest.exclude_domains
+          source_ids: rest.source_ids
+          exclude_source_ids: rest.exclude_source_ids
+          language: rest.language
+          published_before: rest.published_before
+          published_after: rest.published_after
+          published_on: rest.published_on
+          sort: rest.sort
+          limit: rest.limit
+          page: rest.page
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: the-news-all-news-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for The News API — All News. One tool per consumed operation, routed inline through this capability's
+      consumes block.
+    tools:
+    - name: get-all-news
+      description: Get All News
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: the-news-all-news.getallnews
+      with:
+        api_token: tools.api_token
+        search: tools.search
+        search_fields: tools.search_fields
+        locale: tools.locale
+        categories: tools.categories
+        exclude_categories: tools.exclude_categories
+        domains: tools.domains
+        exclude_domains: tools.exclude_domains
+        source_ids: tools.source_ids
+        exclude_source_ids: tools.exclude_source_ids
+        language: tools.language
+        published_before: tools.published_before
+        published_after: tools.published_after
+        published_on: tools.published_on
+        sort: tools.sort
+        limit: tools.limit
+        page: tools.page
+      outputParameters:
+      - type: object
+        mapping: $.
