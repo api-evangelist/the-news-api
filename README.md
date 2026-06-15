@@ -1,133 +1,66 @@
-# The News API
+# The News API (the-news-api)
 
-The News API provides free access to search worldwide news and top stories from over 40,000 sources in 50 countries. Search and filter live and historical articles by keyword, category, language, country, domain, and publication date. Supports advanced boolean search operators and similarity-based discovery.
+The News API provides free access to search worldwide news and top stories from over 40,000 sources in 50 countries. Access live and historical news articles with advanced filtering by keyword, category, language, country, domain, and date. The API supports boolean search operators, pagination, and returns structured article data including headlines, descriptions, images, and category classifications.
 
-**Website:** [thenewsapi.com](https://www.thenewsapi.com/)  
-**Documentation:** [thenewsapi.com/documentation](https://www.thenewsapi.com/documentation)  
-**Sign Up:** [thenewsapi.com/register](https://www.thenewsapi.com/register)
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/the-news-api/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/the-news-api/refs/heads/main/apis.yml)
 
----
+## Scope
+
+- **Position:** Consumer
+- **Access:** 3rd-Party
+
+## Tags
+
+- Articles
+- Headlines
+- News
+- Media
+- Search
+- International
+
+## Timestamps
+
+- **Created:** 2025-02-09
+- **Modified:** 2026-05-19
 
 ## APIs
 
-| API | Description |
-|-----|-------------|
-| [The News API](https://www.thenewsapi.com/) | Worldwide news search and discovery API |
+### The News API
 
----
+Get free access to search worldwide news and top stories from over 40,000 sources in 50 countries. Access live and historical articles with filters for keyword, category, language, locale, domain, and publication date.
 
-## OpenAPI Specifications
+- **Human URL:** [https://www.thenewsapi.com/](https://www.thenewsapi.com/)
+- **Base URL:** `https://api.thenewsapi.com/v1`
 
-| Spec | File |
-|------|------|
-| The News API | [openapi/the-news-api-openapi.yml](openapi/the-news-api-openapi.yml) |
+#### Tags
 
-**Endpoints:**
-- `GET /news/headlines` — Get latest headlines by category
-- `GET /news/top` — Get top stories with filtering
-- `GET /news/all` — Search full historical archive
-- `GET /news/similar/{uuid}` — Find similar articles
-- `GET /news/uuid/{uuid}` — Get article by UUID
-- `GET /news/sources` — List available sources
+- Articles
+- Headlines
+- News
+- Search
+- International
 
----
+#### Properties
 
-## Naftiko Capabilities
+- [Documentation](https://www.thenewsapi.com/documentation)
+- [Sign Up](https://www.thenewsapi.com/register)
+- [Authentication](https://www.thenewsapi.com/documentation#auth)
+- [OpenAPI](openapi/the-news-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/the-news-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/the-news-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
 
-### Workflow Capabilities
+## Common Properties
 
-| Workflow | File | Description |
-|----------|------|-------------|
-| News Monitoring | [capabilities/news-monitoring.yaml](capabilities/news-monitoring.yaml) | Headlines + top stories + archive search + similar articles for news monitoring |
-
-### Shared Per-API Definitions
-
-| API | File |
-|-----|------|
-| The News API | [capabilities/shared/the-news-api.yaml](capabilities/shared/the-news-api.yaml) |
-
----
-
-## Spectral Rules
-
-| Ruleset | File |
-|---------|------|
-| News API Rules | [rules/the-news-api-rules.yml](rules/the-news-api-rules.yml) |
-
----
-
-## JSON Schemas
-
-| Schema | File |
-|--------|------|
-| Article | [json-schema/the-news-api-article-schema.json](json-schema/the-news-api-article-schema.json) |
-
----
-
-## JSON Structure
-
-| Structure | File |
-|-----------|------|
-| Article | [json-structure/the-news-api-article-structure.json](json-structure/the-news-api-article-structure.json) |
-
----
-
-## JSON-LD
-
-| Context | File |
-|---------|------|
-| News API Context | [json-ld/the-news-api-context.jsonld](json-ld/the-news-api-context.jsonld) |
-
----
-
-## Examples
-
-| Example | File |
-|---------|------|
-| Top Stories Search | [examples/the-news-api-top-stories-example.json](examples/the-news-api-top-stories-example.json) |
-
----
-
-## Vocabulary
-
-| Vocabulary | File |
-|------------|------|
-| News API Vocabulary | [vocabulary/the-news-api-vocabulary.yml](vocabulary/the-news-api-vocabulary.yml) |
-
----
-
-## Authentication
-
-Pass your API token as a query parameter on every request:
-
-```
-?api_token=YOUR_API_TOKEN
-```
-
-Obtain a token by registering at [thenewsapi.com/register](https://www.thenewsapi.com/register).
-
----
-
-## Search Operators
-
-The `search` parameter supports advanced boolean operators:
-
-| Operator | Example | Meaning |
-|----------|---------|---------|
-| `+` | `+openai +gpt` | AND — both terms required |
-| `\|` | `openai\|anthropic` | OR — either term |
-| `-` | `AI -crypto` | NOT — exclude term |
-| `"..."` | `"machine learning"` | Exact phrase |
-| `*` | `artific*` | Prefix wildcard |
-| `()` | `(AI\|ML) +regulation` | Grouping |
-
----
+- [Website](https://www.thenewsapi.com/)
+- [Documentation](https://www.thenewsapi.com/documentation)
+- [Sign Up](https://www.thenewsapi.com/register)
+- [Pricing](https://www.thenewsapi.com/pricing)
+- [Spectral Ruleset](rules/the-news-api-rules.yml)
+- [JSON Schema](json-schema/the-news-api-article-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [J S O N L D Context](json-ld/the-news-api-context.jsonld)
+- [Vocabulary](vocabulary/the-news-api-vocabulary.yml)
 
 ## Maintainers
 
-**FN:** Kin Lane  
+**FN:** Kin Lane
 **Email:** kin@apievangelist.com
-
----
-
-*Profile generated 2026-05-03*

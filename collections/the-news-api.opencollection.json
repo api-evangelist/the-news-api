@@ -1,0 +1,540 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The News API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_token",
+      "value": "{{api_token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Headlines",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get News Headlines",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/headlines",
+            "params": [
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of country codes to filter by (e.g., us,ca,gb)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of language codes to filter by (e.g., en,es,fr)."
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of categories: general, science, sports, business, health, entertainment, tech, politics, food, travel."
+              },
+              {
+                "name": "domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of domains to include."
+              },
+              {
+                "name": "exclude_domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of domains to exclude."
+              },
+              {
+                "name": "source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of source IDs to include."
+              },
+              {
+                "name": "exclude_source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated list of source IDs to exclude."
+              },
+              {
+                "name": "published_on",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published on a specific date (Y-m-d format)."
+              },
+              {
+                "name": "headlines_per_category",
+                "value": "",
+                "type": "query",
+                "description": "Number of articles per category (max 10, default 6)."
+              },
+              {
+                "name": "include_similar",
+                "value": "",
+                "type": "query",
+                "description": "Include similar articles in the response (default true)."
+              }
+            ]
+          },
+          "docs": "Retrieve the latest headlines organized by category. Available on Standard plan and above. Returns articles grouped by category with optional similar article suggestions."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Top Stories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Top Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/top",
+            "params": [
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search query with boolean operators: + (AND), | (OR), - (negation), \" (phrase), * (prefix), () (precedence)."
+              },
+              {
+                "name": "search_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated fields to search: title, description, keywords, main_text. Default: title,main_text."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated country codes to filter by."
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories: general, science, sports, business, health, entertainment, tech, politics, food, travel."
+              },
+              {
+                "name": "exclude_categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to exclude."
+              },
+              {
+                "name": "domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to include."
+              },
+              {
+                "name": "exclude_domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to exclude."
+              },
+              {
+                "name": "source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to include."
+              },
+              {
+                "name": "exclude_source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to exclude."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated language codes to filter by."
+              },
+              {
+                "name": "published_before",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published before this datetime (Y-m-d\\TH:i:s)."
+              },
+              {
+                "name": "published_after",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published after this datetime."
+              },
+              {
+                "name": "published_on",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published on this exact date (Y-m-d)."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort by published_at (default) or relevance_score."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page (plan-dependent maximum)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination (default 1, max result set 20,000)."
+              }
+            ]
+          },
+          "docs": "Retrieve live and historical top stories globally or filtered by keyword, category, country, language, domain, or date. Supports advanced boolean search operators."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "All News",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All News",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/all",
+            "params": [
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search query with boolean operators: + (AND), | (OR), - (negation), \" (phrase), * (prefix), () (precedence)."
+              },
+              {
+                "name": "search_fields",
+                "value": "",
+                "type": "query",
+                "description": "Fields to search (title, description, keywords, main_text)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated country codes."
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to include."
+              },
+              {
+                "name": "exclude_categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to exclude."
+              },
+              {
+                "name": "domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to include."
+              },
+              {
+                "name": "exclude_domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to exclude."
+              },
+              {
+                "name": "source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to include."
+              },
+              {
+                "name": "exclude_source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to exclude."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated language codes."
+              },
+              {
+                "name": "published_before",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published before this datetime."
+              },
+              {
+                "name": "published_after",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published after this datetime."
+              },
+              {
+                "name": "published_on",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published on this exact date."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort by published_at or relevance_score."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination."
+              }
+            ]
+          },
+          "docs": "Access the complete historical and live article database. Same filtering and search capabilities as the Top Stories endpoint but covers the full news archive."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Similar News",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Similar News Articles",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/similar/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the article to find similar articles for."
+              },
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated language codes to filter by."
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to filter by."
+              },
+              {
+                "name": "exclude_categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to exclude."
+              },
+              {
+                "name": "domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to include."
+              },
+              {
+                "name": "exclude_domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to exclude."
+              },
+              {
+                "name": "source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to include."
+              },
+              {
+                "name": "exclude_source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to exclude."
+              },
+              {
+                "name": "published_before",
+                "value": "",
+                "type": "query",
+                "description": "Filter by publication date upper bound."
+              },
+              {
+                "name": "published_after",
+                "value": "",
+                "type": "query",
+                "description": "Filter by publication date lower bound."
+              },
+              {
+                "name": "published_on",
+                "value": "",
+                "type": "query",
+                "description": "Filter to exact publication date."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of similar articles to return."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination."
+              }
+            ]
+          },
+          "docs": "Find articles similar to a specific article identified by its UUID. Returns articles ranked by relevance_score indicating similarity strength."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Articles",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get News Article By UUID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/uuid/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the article to retrieve."
+              },
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              }
+            ]
+          },
+          "docs": "Retrieve a specific news article by its unique UUID identifier."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Sources",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get News Sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/sources",
+            "params": [
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to filter sources by."
+              },
+              {
+                "name": "exclude_categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to exclude."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated language codes to filter by."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination (50 sources per page)."
+              }
+            ]
+          },
+          "docs": "Retrieve available news sources and their metadata including domain, language, locale, and categories covered. Returns 50 results per page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

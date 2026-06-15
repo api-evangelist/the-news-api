@@ -1,0 +1,2700 @@
+{
+  "item": [
+    {
+      "id": "609d210b-764e-415d-bfe4-cd038ff3f608",
+      "name": "Headlines",
+      "description": {
+        "content": "Latest headlines organized by category.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "059babe5-d33b-418d-9693-0bae573c9dbc",
+          "name": "Get News Headlines",
+          "request": {
+            "name": "Get News Headlines",
+            "description": {
+              "content": "Retrieve the latest headlines organized by category. Available on Standard plan and above. Returns articles grouped by category with optional similar article suggestions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "headlines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Comma-separated list of country codes to filter by (e.g., us,ca,gb)."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Comma-separated list of language codes to filter by (e.g., en,es,fr)."
+                },
+                {
+                  "disabled": false,
+                  "key": "categories",
+                  "value": "<string>",
+                  "description": "Comma-separated list of categories: general, science, sports, business, health, entertainment, tech, politics, food, travel."
+                },
+                {
+                  "disabled": false,
+                  "key": "domains",
+                  "value": "<string>",
+                  "description": "Comma-separated list of domains to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_domains",
+                  "value": "<string>",
+                  "description": "Comma-separated list of domains to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of source IDs to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of source IDs to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_on",
+                  "value": "<date>",
+                  "description": "Filter to articles published on a specific date (Y-m-d format)."
+                },
+                {
+                  "disabled": false,
+                  "key": "headlines_per_category",
+                  "value": "6",
+                  "description": "Number of articles per category (max 10, default 6)."
+                },
+                {
+                  "disabled": false,
+                  "key": "include_similar",
+                  "value": "true",
+                  "description": "Include similar articles in the response (default true)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "11d99946-d91c-4f4c-93b6-21a2329973d0",
+              "name": "Headlines organized by category.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"general\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://SEOzIPhPcTAThTK.fjgrx\",\n        \"image_url\": \"http://vHRWWiKjYChoEFP.fkdql6gBefaKoX7KSYB,maM,RFAniXl4o2Z8t-g7jika95fZ6dZMzCgZ+gOoMkmU,EpX,O.U\",\n        \"language\": \"string\",\n        \"published_at\": \"2018-08-02T01:39:38.940Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 4095.6439274980603,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://ExEInJ.eeonK9R4Xjb5DUTh3r8+duaTkTwRgpDo\",\n            \"image_url\": \"https://sHoKKkvvRgDTbplauBpyPC.cgqKFsHSkOWetUEZhqt6DsZlKnX9Ol96h\",\n            \"language\": \"string\",\n            \"published_at\": \"1971-11-16T08:53:21.949Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 483.80192521851217\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://gXPHVQSyYrHbZzT.fubvt4tZcJDUIc5Q+ucbJzr9aLc2QniJ7UML5efAZ8\",\n            \"image_url\": \"https://UElDCkxQxdJbxKtXIyiZV.ewbsNDRijVe6GIEwgzi0ED5kH3HiM\",\n            \"language\": \"string\",\n            \"published_at\": \"2015-08-01T15:19:02.496Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7135.5095586169755\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://rb.nvmiNsrIN98WG6iSI4RZdbC9wfTLIr3lpraxomu1BcMXzdZekfjVX6jWazFgzjqe\",\n        \"image_url\": \"http://IOWkorxbYGGyQAGxGYkqEiISyvdcMGLM.ohRRMNqzvctA1mVr79hgXnuOeqBvb+z-CanER9lBfUd08w7WpY.+\",\n        \"language\": \"string\",\n        \"published_at\": \"1993-09-24T21:52:06.332Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 8341.751302963004,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://wLsnGYrunWLekSAasIfYhEguVzYPrty.pujAA0u\",\n            \"image_url\": \"https://JNlJWIHToWdgByuYDiW.diV7WmSNrlsYAc200dPS0pwPcWokpkdNvja+QxygQ0xt\",\n            \"language\": \"string\",\n            \"published_at\": \"1991-09-04T06:52:52.232Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 5358.8718710707735\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://vAOOBERLhYXGzzLgfcvzauHD.epchysNWzXPpLlfmCu,dcpKND8rLENTF6kLA0IjUAxV3mQrf2FgdcDsNNiX7iOLOKMRY\",\n            \"image_url\": \"http://TJvobijHWXAdKZEdBkBHQYjXHAcEi.ksGCOqI67.DKh8TaUhLL1+bG5QYQt91EqwYTbsAiJc\",\n            \"language\": \"string\",\n            \"published_at\": \"2013-08-09T04:44:51.192Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2711.7529750874282\n          }\n        ]\n      }\n    ],\n    \"business\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://rDcEXvnrvDAyUFHNFOZwAXfzefAmgwuM.rnAIcwRQYZZIbbGB4SbEgoC+wbt+eN,jI.FeqwkEqQeEzfv2zaouM\",\n        \"image_url\": \"https://HTfdevScLDOcCxmPg.dcobTjj4oyS\",\n        \"language\": \"string\",\n        \"published_at\": \"1956-06-08T02:59:50.695Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 5121.530938168633,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://aBtBqGLXyfhlAJAGJ.uxjwtWz,XM0QFbu6jyKSjWWoBnt5.krXTqYLf14IOOmBx\",\n            \"image_url\": \"http://smBuIMJjGB.aykAZwYgw1acE.1FtZiHMORTLmWBaRyIhe\",\n            \"language\": \"string\",\n            \"published_at\": \"1949-09-05T02:47:12.894Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 8863.063158167122\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://AqNsfBMMzZxsrylktbrlZQuq.cyZ00GGb5c9.mckQ.gDVJOWPFFb.t9,wFq+nc8g\",\n            \"image_url\": \"http://QLvlaRHCTvAAj.ccDlW6KH5SFIYb5vRTgEPMk7d3uWMgzRPtD.X3.qE,8,m,8BWO12YeczLI.D\",\n            \"language\": \"string\",\n            \"published_at\": \"1963-03-14T17:56:58.333Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1181.1674011206608\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://dfxIFYeuqgvwXUfvUsoDkEU.cnzdHFCtm6M6OyAcRESt4AU7IkbwncpWlLsXbrV6+PiRibwsgt1qy+-p8CyJcUPz\",\n        \"image_url\": \"https://loVtrhtXOFZgajdWmnahC.zjliiSaxzDEgt8aZFOswSbL63zUB-WxnwJZ,8xVpkhrAdvrkGcIF3uJu+,.WY6scxQMVxSEGks19dhoUdKI\",\n        \"language\": \"string\",\n        \"published_at\": \"1961-11-29T19:55:45.787Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 6838.654686618245,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://PVxXjPNRFJMRwuHmGDHobA.iitz0scVGO7o6n\",\n            \"image_url\": \"http://KjjKfpYGUXmKONwAlVnMXPAkBFuqWrGZj.docaABGXa7QivbvipGatTPMLIKKHvvp.Wql4Ao\",\n            \"language\": \"string\",\n            \"published_at\": \"1998-01-08T03:15:19.599Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 230.47387721413014\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://jI.djAGCu,gfibapOzlGEzioVGLxA\",\n            \"image_url\": \"https://NGqlEqBMVBvunwLtRfwnIeLSzbRHCF.dcxI42P1BrbcEFQsB,CDPKstJUDaH8yviOQrXzwWxYZJoKJUam3N9n58xVbB3yF\",\n            \"language\": \"string\",\n            \"published_at\": \"1993-05-01T00:23:01.344Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1301.8967472949694\n          }\n        ]\n      }\n    ],\n    \"sports\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://FzOvLTgaKYwWaFeNuBvXzui.qyctO5FLKjYoyQbZZjUn\",\n        \"image_url\": \"https://iVscXjnZycPc.isnfhG7MlxaAchkFTdPVvwidvawC\",\n        \"language\": \"string\",\n        \"published_at\": \"1972-08-01T14:37:32.737Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 986.2520649215201,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://FtVBugTbsLzXhAJmPZj.remEwHdTvuxNE,4JInVOr8GwBrHe29m0ukG,peLVZweGXwe3\",\n            \"image_url\": \"http://YusvttsEoQbGwxSTEZ.yfEih-YQOXqCGos4iC3WX1AU8aK\",\n            \"language\": \"string\",\n            \"published_at\": \"2013-12-01T14:14:36.341Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3885.4014411025573\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://okGCijcQrakozZjasvZEyDnWoui.txjXrLDUKtqB9Ae-kX0sIuJrd+slSj0rrPK5-Xx-Ouo5.Jn9Au6Sqg37ebE\",\n            \"image_url\": \"http://LtcvKuigkKYTpsCwvYLzuHDXkA.holjh6hnjVN1Z4mz..LAq.mZQv6PR3wePuzHVajdev.A+S9VJykwSCvPtIvqHQaKuEboCmG\",\n            \"language\": \"string\",\n            \"published_at\": \"1959-11-08T21:11:28.166Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6729.944169387274\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://jRraaqGz.snziT+pwSfHGq20T+\",\n        \"image_url\": \"https://IhwYhoUuVRRYAyVZzukoYLQVrx.mjoPpP0gW0a3G99w843Pv+BlH6HYElPmWsaQZph\",\n        \"language\": \"string\",\n        \"published_at\": \"1955-10-05T12:03:20.182Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 2586.0044294537397,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://LiRaHA.xmgx--UvFlVWgJSfEm88PLgMar1i9UwzRoJhsoN2ZWE0mAOM,PxeEiO\",\n            \"image_url\": \"https://eRtShbKo.aoqmS+Zj4CJja,hM-J.2,qGRMjww1aQvo4bMhqbOib.lnAllzJXNtSHGJbxacTY\",\n            \"language\": \"string\",\n            \"published_at\": \"1996-10-24T19:31:05.432Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3230.4402139098142\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://eRohA.uojzxxxScfnCFQ4APpGVFCg\",\n            \"image_url\": \"https://aDCbnyIJttyBHjUzkJPxVxC.uuY8t1537ZOltXqCMR9aG6LBxTY1li+VvPyh2JjQd.\",\n            \"language\": \"string\",\n            \"published_at\": \"1969-02-10T09:01:09.432Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2427.0514510195585\n          }\n        ]\n      }\n    ],\n    \"tech\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://kLXkPwhPDitsmhLFDhQDZpQMc.mcojiduM4P4lVQ0IJaFAQYyD,4\",\n        \"image_url\": \"https://ptEaTgpwaGKQtkwOUONWYs.egJ.iA.T29gDCgTWOvQIH4L5FNKHubE4\",\n        \"language\": \"string\",\n        \"published_at\": \"2003-01-05T22:26:16.166Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 1096.8392976285857,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://cnerHuqtXOhuNcarQFoOdsVjOSQ.ogsmxjY6QF9rZcwyz6WO47XrwtxU0B0myvgIQyc6QIllvtQowWI9uFe0Qdp9t8+xofq\",\n            \"image_url\": \"http://sdIoGDpfELQoMTTiqCcssgzWnO.chocdaAQJ+KKfgDmpdygcD\",\n            \"language\": \"string\",\n            \"published_at\": \"1994-08-10T15:28:09.198Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 5194.118845463455\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://e.mglycKhbJsO3,4lds+\",\n            \"image_url\": \"https://dOCyVFy.zqzuFKPn2e5QVFZzV,znM9JIrzxGl2sT6PLRbeum3ifGlq1fjgrAfVY--2JiOm7M7AoSJ1N0eD,E\",\n            \"language\": \"string\",\n            \"published_at\": \"2013-09-16T08:51:00.272Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 464.0854837427699\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://VcJumZMo.pqhhFlcPfXh\",\n        \"image_url\": \"https://yzetbuaVvsSWGselxgKADtJDyKyk.eyfC8VDa,2wumAE2hIB7ZZbHhoMYXSD\",\n        \"language\": \"string\",\n        \"published_at\": \"1994-07-16T10:13:18.889Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 5273.033091555381,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://KQdhWYUhzX.ffmfpRXiOpKcCsy+WHHbSDLTu8qvi.qIicOi6HoqNyJmeJsYjs5UJQ4GZv9Tr6ycmySyf\",\n            \"image_url\": \"https://gtdZKzXFcaNAToglMJXUV.ibGi8h6Qr7\",\n            \"language\": \"string\",\n            \"published_at\": \"1955-11-09T20:37:42.173Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 9344.181001888683\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://LelabiKDHPHbgTjwCMOBOmfdlqDgEmi.sxkEOErqZz-o0qsO5UAIvz0uvW6p+7PZmIBZuv1xhs5QSSQOm4zjPLHhJ\",\n            \"image_url\": \"http://XSwAnYHlApTnyvQoaYLXFubUwA.nysIKNQgHNENVBjI37apJl5oyZMaFX5-hxDGu5RMtuHOF\",\n            \"language\": \"string\",\n            \"published_at\": \"2024-07-10T20:03:54.702Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3287.8818552154885\n          }\n        ]\n      }\n    ],\n    \"science\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://RTvvAiaLg.kjVcJ5RImWXU3sqZ5OaZeSJMRvoBqtxIeQwM\",\n        \"image_url\": \"http://QYlQAthiCCrhsuzsdJlcDDZiNxcramDzj.tdaYE2,eKX5lXt+RkOWkMhtGkze02ezd3o+UXh8pfhCs+LPwJ8mpZttydIv2cira\",\n        \"language\": \"string\",\n        \"published_at\": \"1949-08-28T12:04:40.156Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 7467.345186187169,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://aLUHFRBWSYquDXzpDieeQQLtTu.edB03mj0TIB+mmkbMiUEdRzGsCXPEzUoApq.HGkG4RwswB2K-Xj0kD,SIiNc0Imz,dSb8NGm\",\n            \"image_url\": \"http://XFEIVfqSs.bzsLMc2Du8sdGJ7x+x1WMGKlUZPBmEbstDu\",\n            \"language\": \"string\",\n            \"published_at\": \"1958-09-28T07:23:18.572Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 9210.83448693836\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://PImXqHjcQfYHKPRTD.uhqkRcl3KUzo4ufrXVoAOhOh,nbt,,V9O2t,-av2t3BM4\",\n            \"image_url\": \"https://MlRUyvCzwsSRYa.rszCVlHcw-FHTsKPQpPG8\",\n            \"language\": \"string\",\n            \"published_at\": \"1968-11-28T09:03:28.373Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7045.133783211616\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://BlTqtYqnism.tvqsrr9qxMCmBvnou-8+c+Vc.ec+-pOyoeL\",\n        \"image_url\": \"https://fpEfyd.leiiOKy3qhjGpy8ahzWaAK-XKwzCVtgUvR94tRYo\",\n        \"language\": \"string\",\n        \"published_at\": \"1956-12-01T08:51:22.157Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 4614.871287110379,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://vMfjNZRbZBBICSNc.gnqgPfFFt\",\n            \"image_url\": \"https://ITrxBmHcOrSHBgXkyJomr.yrcqwxxXa5uIB67PP5WyqnJmGd2M,DoqjZ\",\n            \"language\": \"string\",\n            \"published_at\": \"2021-06-01T14:22:16.286Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 4269.449940924534\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://XHTLKzBLNm.jrldxXYxS.A96C74yPd,GGvyxdY2UIIp\",\n            \"image_url\": \"https://SgYpoJhqrXjTUcLTURoln.temkBl026pvlwIWeiyLlP0tZ9OGj\",\n            \"language\": \"string\",\n            \"published_at\": \"1997-07-03T22:06:39.903Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1082.4253453655074\n          }\n        ]\n      }\n    ],\n    \"health\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://QocNYprgh.ucBASvntYVbBwBH6rk\",\n        \"image_url\": \"https://voCWoSKYYNHJPMekpkQizyN.ixY,Pt\",\n        \"language\": \"string\",\n        \"published_at\": \"1981-02-16T18:44:49.978Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 1966.339635344494,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://ysdGkXsqRPGVH.vtYYCRXy7C4QtNyfjHJJUhx7Zh4,L.l3l53Eu51GcdJyQde9-3iaKpkEqF6BxGlA0x\",\n            \"image_url\": \"https://hFcsROibZBuwxHZDzkJBIOhIHIIB.jiircxNpBPr+DYleEqs2LUDwTqpY.,1Zd5r\",\n            \"language\": \"string\",\n            \"published_at\": \"1959-10-12T13:26:04.927Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 4183.781202488607\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://nnbzVTIA.rfmlx3LaVU.VewpsfrBkKwgALbuTDqnrtoe0T9qiee8JlWikViI9Ezjbvm2bOHCCR\",\n            \"image_url\": \"https://RNbAiyoKVe.ebaV9-nzCr.BCCuDZSE2GcKVoy8vWP9fiGaeAaChVg6m\",\n            \"language\": \"string\",\n            \"published_at\": \"1980-09-13T14:12:09.025Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6546.234061175959\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://flZywryHDcLky.qugyeJEk5GshJYn5TmgBh3E9z-NNlwPzD4t6ZXhJZYNRQAJWY,xcx\",\n        \"image_url\": \"http://bwVDU.sibIt0Os3dvvNrKPssRXvvYqcqEIvDTejVy0yW\",\n        \"language\": \"string\",\n        \"published_at\": \"1946-06-12T10:52:23.603Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 3596.363788834983,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://FGTmfPnnrKXzKIqRXnXqa.cspFfrbqPIcj-.78PmOp7uE\",\n            \"image_url\": \"http://gGMHpkCl.wvkyiBF3UTaK9KGZWssGw,Gs+3Rj9-D,YKAvAIUL4kI8Gm4Qjdg8Pi8z,FKwJch5gM\",\n            \"language\": \"string\",\n            \"published_at\": \"1960-10-31T18:03:23.820Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6860.603932544789\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://ZpyIKsxVqablTPHUaqsYzkwMozgPMUkfO.jhyiJUCbR-TqzirCNi\",\n            \"image_url\": \"https://QzfUrHhWZSbshZZmWQ.ahcqrRyn312O54Nw,sD75\",\n            \"language\": \"string\",\n            \"published_at\": \"2003-11-30T17:42:42.838Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6726.018207776261\n          }\n        ]\n      }\n    ],\n    \"entertainment\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://pFkxRHeFtCnMRcma.yhFeF-XLZ3.PhkqOTtGNuUQw2YYLr.O2K03dIMeLyyoctw9,7EktDIeZLYdUvhr-tve8r\",\n        \"image_url\": \"http://zaqsQjmuDNFfgZTgXMjrpBo.ilsoe.hSxuu\",\n        \"language\": \"string\",\n        \"published_at\": \"1974-01-25T19:38:12.134Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 4760.711672815551,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://VMHoazDNIvXjqemaALpd.qmOaIXtYBGYwlBQjLoi3tRCq6AWFRS-Qe7hgIMWffihdDkluQrauiZQOLsMWuoASu.NPR+Bqv.N2\",\n            \"image_url\": \"http://ts.xilukYq5fT486ergZfVPMCVQmwzCmQerl5neYsbuiGBZ\",\n            \"language\": \"string\",\n            \"published_at\": \"1993-07-23T05:33:38.685Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3694.762021068888\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://zMeBxGfQhNotvyiVinbClBiaHpkAccST.mzara\",\n            \"image_url\": \"http://pCbANiCWOgrfuMjKoD.uikeWjyWNKEB6OA8+dQfmPkmA3Qh-iH\",\n            \"language\": \"string\",\n            \"published_at\": \"1970-09-19T17:46:19.123Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2490.0407619210996\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://CSMTEaCCIsD.xvsjAqORABzDncMDDEiKV29P9rj8ETocGLlR+gGbHImWqe6cCg1M\",\n        \"image_url\": \"http://XNfEJPLsaPhGpPOzqmQxsjxmMLTbu.lcwz,0IJzuju0WIVZ.ZTkC86dfVIH+RmK1PYrodZPYHmPFgUY\",\n        \"language\": \"string\",\n        \"published_at\": \"2015-01-14T08:38:08.577Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 1246.69027843465,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://Xa.mfkvMT1xi6fI0Im8CdTG1ARbb,0kl5ZsQwKOL6dgdh,2kFSDsVKKMsIZEk9Yn3rzHFJWVwp\",\n            \"image_url\": \"http://aItRRUzDRlUcEUEidZL.cbfdrrfuQ4.UR7TJ0b-LwuRokxaI8vpGqePboKwMEdqYOnvAhk+3muy\",\n            \"language\": \"string\",\n            \"published_at\": \"1981-12-04T03:34:09.256Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 4992.496581177968\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://tDudHjl.hagc+T+h+1cjLJLZvjosxh5HxJf1vUvaNWYDX5ii9UKjftICEh\",\n            \"image_url\": \"https://SIkedJMDgPP.whmHtLQ-ngsyzFk5QSfU-PE9bnZXXvakFs0CSMjXJLJYA5CezU7EGoUJx8d3\",\n            \"language\": \"string\",\n            \"published_at\": \"1971-09-15T14:42:00.613Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6674.589974080495\n          }\n        ]\n      }\n    ],\n    \"politics\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://aThGBdvtuA.tlhdKK87r5UCfZD3-gCpOVfNHcs\",\n        \"image_url\": \"https://mGOTGUgHpnn.donfX434+rhy3iZnxwdWOEFQ73IGmXfpork2697cUNu\",\n        \"language\": \"string\",\n        \"published_at\": \"2009-04-05T23:01:20.932Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 6306.86663652608,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://ZdJqXyIrHfXDMNkte.qgXyZEswgfNiA4rbnuJ1ucWhhqYUx6yTiukQ4OL,NGTTvahEwyxJzSl9nx3p6Cs\",\n            \"image_url\": \"https://XafhKODczuUvM.okP-Qx1Az2bTIeyKOTR4Tl558v28sjlijPpAaSf7qx7xVFOrVDnpwtM-GC\",\n            \"language\": \"string\",\n            \"published_at\": \"1993-09-12T20:56:52.626Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2073.8948106936896\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://uGDQwKvmYWWzUUQlRzMFPLdRtA.bqE10n2ztM58,Hoa,8VOLrHC1ID7HLcx.EhKD\",\n            \"image_url\": \"http://fCSLOMAuLaMvKHUlNp.kycA.IO,JWZTK1A8BYUT,MjvmmRnYb,s0UjkqIqgljA-NsOLdtBbDk5TmsQ,D\",\n            \"language\": \"string\",\n            \"published_at\": \"2022-06-22T22:00:31.525Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3573.1854439445965\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://qVIcZmqdwBklIu.ksNSgzRIbK3lRqfw\",\n        \"image_url\": \"https://VHjyHFvP.dlvaRT9ebrzr8lE4yapuWXdDN7Vhgvi.Go.xZlNNTA+shVMLi5UTbIFMYtdNE8rDKjT\",\n        \"language\": \"string\",\n        \"published_at\": \"1961-10-20T16:14:26.798Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 8590.450534464215,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://betIoFCNefTrhNcUUkomxiAjPNdOi.ikf-LyDR,wSq+nKIMD\",\n            \"image_url\": \"http://RSKSWluVY.eurrgIsrk.lopqsS3jiD+JiNnTrOOLKIWhwcoWtKpuo+.Z+ARPVslp288YZxUmNPO\",\n            \"language\": \"string\",\n            \"published_at\": \"2014-07-22T22:46:45.395Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 5992.502712892829\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://aotWqXxtlRddyQcWhsJsNscaiEFIF.qqnOUjOFmS\",\n            \"image_url\": \"https://XBKHZqQdSbBYCjQWrHGkMBucJYkfQyEc.pqyg+dF-TU\",\n            \"language\": \"string\",\n            \"published_at\": \"2003-05-01T00:13:06.447Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6837.0303516183985\n          }\n        ]\n      }\n    ],\n    \"food\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://FUphunrmtFP.wtoMRRc7kaPca3ZnDYnWTsmFklYOyXg,.Tvdr1apUdIiHBWaUvzlEsUS\",\n        \"image_url\": \"http://XuajWp.nzyxm.My1qIT5R3+dA-Fm\",\n        \"language\": \"string\",\n        \"published_at\": \"2020-07-16T10:13:42.539Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 1390.3157779763553,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://qmLeooxivVvuNJtIJ.ntb23WsGyGFHGmi2cvOgPhLgN0r+\",\n            \"image_url\": \"http://WOxiZawpZsSQCKJSXpi.slzr-QDSpyTji+oaDf1krAWkP\",\n            \"language\": \"string\",\n            \"published_at\": \"1957-11-30T11:47:36.864Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 494.27715803587733\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://XaQlDeqLdnDjVlxGQOgSTuMAiw.dzRfPTBXhFGW4LromI9hXKrALt,c0CofJsQ.We.hCkc8wiKapRO,QAm2d1jW5A94caHm\",\n            \"image_url\": \"http://XmnUISCzpdzNxt.gltnqYwIK-dtv\",\n            \"language\": \"string\",\n            \"published_at\": \"2005-07-04T07:29:06.562Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1509.9327779231896\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://NRvL.jiw0dJWbSy7VtauLQ2btt0Kf2Bh,inbSOWTSc,u76,TylErqA4L8.Ha5WMLzWcKEAL\",\n        \"image_url\": \"http://lYCAFPQNhGcnEyGkQtHhKDfb.gffpjA9Amu7l+P1eq+IiF7F8KuNPoRZ8C9y4a0c2CbL87,j0tyyZNlYf\",\n        \"language\": \"string\",\n        \"published_at\": \"2016-08-26T09:38:54.693Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 9569.712338243147,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://JmMqOXWORI.fzhT\",\n            \"image_url\": \"https://WZWenOsIJvQDqDierNafnkrgkcC.tmcXxJeLL+t2ssnqxJzXLGBhOMN4mpih\",\n            \"language\": \"string\",\n            \"published_at\": \"2017-05-24T04:30:23.844Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 8031.466754752693\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://rjQcLHBnviauklRQugaufvEdcmrha.dlcnst71eko\",\n            \"image_url\": \"http://EaCOEOmgSIIUBJ.aofrA1\",\n            \"language\": \"string\",\n            \"published_at\": \"1976-03-21T01:49:46.815Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1018.9843561681921\n          }\n        ]\n      }\n    ],\n    \"travel\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://rr.yzFWuW4c8x3IAmPNBoazUYyttXRGb1NdgBHFgiIOrkhhZal\",\n        \"image_url\": \"http://ySsRcFBaBAkzWOdQqfuMdBf.bnkJUddttHMFKMKz78dO\",\n        \"language\": \"string\",\n        \"published_at\": \"1960-03-15T09:14:35.338Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 2866.483358016341,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://vcSFRGKyJjgTGKsQvADKMswCqQP.lqmsW,A2LoU6Tabc5qYpDY3SdcRhwl5D7A9w\",\n            \"image_url\": \"https://kNLKpMzrM.tbzehNHUuuSxyKBxX,2bPYbYy\",\n            \"language\": \"string\",\n            \"published_at\": \"1946-11-02T06:52:59.126Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 296.1497154390358\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://lavCyOixJofmtwz.lbgpr6ZuA1iF0slacaLn,DXddtf.sfpJoOwBwQ\",\n            \"image_url\": \"https://QEnUZbAsNxhJBBBdmZLVkSYfiov.dbuam8xWUXf8FG8wAchlEmnpStXWXEvStLyGtXLOQpktoWdtJhx8-J0x44R\",\n            \"language\": \"string\",\n            \"published_at\": \"1978-03-02T09:29:51.708Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 404.6985327763819\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://HPcoGzSeeuO.jotbUF3QAevoioNR6FkKzvFcynrZWY0ovt,fuOLlT0v\",\n        \"image_url\": \"https://VTsD.imctTFJV793v9k6\",\n        \"language\": \"string\",\n        \"published_at\": \"1971-05-26T20:17:56.664Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 939.673160898068,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://TAZZajtcGvgSqTEaLrj.pwFDpsQw60WyZqKDl51aNNG6uqy8hN\",\n            \"image_url\": \"http://betopOof.fhiRdrU8aec4VAJgcH218XQQBLcdyOw6vOK0laPtT-EUl2OQgzsI9ioc6jzP2fkHzLh8nwOvMpp7qIoXz3\",\n            \"language\": \"string\",\n            \"published_at\": \"2018-09-10T01:38:28.848Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1728.6393075359651\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://TktWdxmFIRHAxQIkGilI.drfaylx6EzehmCsoN0BMbIMKc7cpp9ZC-ktDRNQ2S.dtEms5eUuNW1A.zqRW.NMnMUqb0H\",\n            \"image_url\": \"https://P.lixJqaB81k-dTQaZwHCrx6lps0lp+xXgcBoyuNbWx67kJLHWVmi7L+C\",\n            \"language\": \"string\",\n            \"published_at\": \"2018-11-10T04:26:31.456Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 5654.905905344682\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "982f4642-088a-4800-848b-995811aeb875",
+              "name": "Bad request - malformed parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fc9a01c3-a8f4-4850-9291-1d6a7a9ce8be",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fca86bd3-de5c-4325-98a2-d896335c9596",
+              "name": "Payment required - usage limit reached.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c21c7095-a631-436a-b74e-6e9bc7e7dfe5",
+              "name": "Forbidden - endpoint access restricted on your plan.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67fb1fca-b632-439b-8377-b559ca10a56e",
+              "name": "Too many requests - rate limit reached (60-second window).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "ce181bf0-ddd1-4768-9f61-dabbbf55d77f",
+      "name": "Top Stories",
+      "description": {
+        "content": "Top stories filtered by keyword, category, and date.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6d33ce16-9c61-4e1d-b1d0-cb4d27431eb5",
+          "name": "Get Top Stories",
+          "request": {
+            "name": "Get Top Stories",
+            "description": {
+              "content": "Retrieve live and historical top stories globally or filtered by keyword, category, country, language, domain, or date. Supports advanced boolean search operators.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "top"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search query with boolean operators: + (AND), | (OR), - (negation), \" (phrase), * (prefix), () (precedence)."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated fields to search: title, description, keywords, main_text. Default: title,main_text."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Comma-separated country codes to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories: general, science, sports, business, health, entertainment, tech, politics, food, travel."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Comma-separated language codes to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_before",
+                  "value": "<string>",
+                  "description": "Filter to articles published before this datetime (Y-m-d\\TH:i:s)."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_after",
+                  "value": "<string>",
+                  "description": "Filter to articles published after this datetime."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_on",
+                  "value": "<date>",
+                  "description": "Filter to articles published on this exact date (Y-m-d)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Sort by published_at (default) or relevance_score."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of results per page (plan-dependent maximum)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination (default 1, max result set 20,000)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8802d67e-9878-4355-aedc-e0c34d15fd5a",
+              "name": "List of top news articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"found\": 2965,\n    \"returned\": 3689,\n    \"limit\": 6779,\n    \"page\": 2099\n  },\n  \"data\": [\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"http://bcRWbqKVbNtMDLxEXlUrDf.gbvyUpK0Fv3,1FuysSFi8NF7sVZZDmUtbCrLhx0Lxn0glmd-tN-dXb\",\n      \"image_url\": \"https://BybYFAUvMYeDKxohgaDDoEYTzV.yvyy9j6ZlxoSe7geiyVYK4Ramx,ktzmjjUxNCYezeYzHO2+wxSaI7Nueu0Tuf.yOUJOY\",\n      \"language\": \"string\",\n      \"published_at\": \"1947-01-04T18:51:09.730Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 8399.907471274812\n    },\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"https://wjUiwkUACAIIiOpWQ.tazjykpVKbDsgqjjNwfGj2uJ4+pQ\",\n      \"image_url\": \"http://gLpSIgbcaPIIvoDkrTTzoB.bdP,ap8p35OdtQczCNvv.HJt1IuW7KC5.7bS0pRpueRysreuSarmO9WEYz+o8P8x\",\n      \"language\": \"string\",\n      \"published_at\": \"2024-11-29T03:17:49.350Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 9909.501953724483\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9d875150-1f2b-4be7-81e3-0a4919e71395",
+              "name": "Bad request - malformed parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f95c1b6f-3fac-4591-8a2e-1c4f0d775b16",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c1a64d41-b909-49bc-86e6-92ee3256f627",
+              "name": "Too many requests - rate limit reached (60-second window).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "39d60307-73ef-45a7-a0d9-cb8270e4ee1b",
+      "name": "All News",
+      "description": {
+        "content": "Full historical and live article database search.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b309c9d7-6bf8-4aff-8de4-e6f9897cc9c1",
+          "name": "Get All News",
+          "request": {
+            "name": "Get All News",
+            "description": {
+              "content": "Access the complete historical and live article database. Same filtering and search capabilities as the Top Stories endpoint but covers the full news archive.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "all"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search query with boolean operators: + (AND), | (OR), - (negation), \" (phrase), * (prefix), () (precedence)."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_fields",
+                  "value": "<string>",
+                  "description": "Fields to search (title, description, keywords, main_text)."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Comma-separated country codes."
+                },
+                {
+                  "disabled": false,
+                  "key": "categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Comma-separated language codes."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_before",
+                  "value": "<string>",
+                  "description": "Filter to articles published before this datetime."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_after",
+                  "value": "<string>",
+                  "description": "Filter to articles published after this datetime."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_on",
+                  "value": "<date>",
+                  "description": "Filter to articles published on this exact date."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Sort by published_at or relevance_score."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of results per page."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec7eb7fc-2135-4102-a605-2dcab5e1398d",
+              "name": "List of news articles from the full archive.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"found\": 2965,\n    \"returned\": 3689,\n    \"limit\": 6779,\n    \"page\": 2099\n  },\n  \"data\": [\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"http://bcRWbqKVbNtMDLxEXlUrDf.gbvyUpK0Fv3,1FuysSFi8NF7sVZZDmUtbCrLhx0Lxn0glmd-tN-dXb\",\n      \"image_url\": \"https://BybYFAUvMYeDKxohgaDDoEYTzV.yvyy9j6ZlxoSe7geiyVYK4Ramx,ktzmjjUxNCYezeYzHO2+wxSaI7Nueu0Tuf.yOUJOY\",\n      \"language\": \"string\",\n      \"published_at\": \"1947-01-04T18:51:09.730Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 8399.907471274812\n    },\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"https://wjUiwkUACAIIiOpWQ.tazjykpVKbDsgqjjNwfGj2uJ4+pQ\",\n      \"image_url\": \"http://gLpSIgbcaPIIvoDkrTTzoB.bdP,ap8p35OdtQczCNvv.HJt1IuW7KC5.7bS0pRpueRysreuSarmO9WEYz+o8P8x\",\n      \"language\": \"string\",\n      \"published_at\": \"2024-11-29T03:17:49.350Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 9909.501953724483\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "04f129a2-b800-4125-b44a-4c73341a1a7d",
+              "name": "Bad request - malformed parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7d2065d4-302d-4448-8f30-7b3a8830fc39",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "18353149-3246-438c-a7b2-6a80dd1a4f9b",
+              "name": "Too many requests - rate limit reached (60-second window).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "all"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "d7cf1b98-e7f4-4094-b2ad-22da00b827e1",
+      "name": "Similar News",
+      "description": {
+        "content": "Articles similar to a given article.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6a9e2668-c637-465d-8d9c-da06404b43ff",
+          "name": "Get Similar News Articles",
+          "request": {
+            "name": "Get Similar News Articles",
+            "description": {
+              "content": "Find articles similar to a specific article identified by its UUID. Returns articles ranked by relevance_score indicating similarity strength.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "similar",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Comma-separated language codes to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_before",
+                  "value": "<string>",
+                  "description": "Filter by publication date upper bound."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_after",
+                  "value": "<string>",
+                  "description": "Filter by publication date lower bound."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_on",
+                  "value": "<date>",
+                  "description": "Filter to exact publication date."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of similar articles to return."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the article to find similar articles for."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "bfd3290c-3751-466c-b30c-b12cc456cd7a",
+              "name": "List of similar articles ranked by relevance score.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "similar",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the article to find similar articles for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"found\": 3210,\n    \"returned\": 5397,\n    \"limit\": 7732,\n    \"page\": 4554\n  },\n  \"data\": [\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"http://lKeMdRUtcYgKjDflDrrOmUVFA.ewciipN9ESfshsm8MUmyGNhltGSWoZZSak5BUFb46qOrK-m0g3rsU8H+B5QHOXnNfx,Xlmq.Q\",\n      \"image_url\": \"http://ShuGtgaduDMqdXfjsseaKcpcPjEaJt.rlopfsDfOmT2St.-db2vwl6hUv4JCBhdbB\",\n      \"language\": \"string\",\n      \"published_at\": \"1950-08-30T09:08:24.038Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 8354.211362377246\n    },\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"https://FSpMmuxbsEpFRpFMjQalf.opmdxj7L82MZPoTKC7JMgUEouRa48ULqGBEPALks3\",\n      \"image_url\": \"http://fkqnirmH.dshnOFPcD\",\n      \"language\": \"string\",\n      \"published_at\": \"1985-01-30T13:27:50.326Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 4515.654060607403\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "de6714fb-2959-4fb8-a951-d3c3bcfcd550",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "similar",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the article to find similar articles for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a568591-e5eb-4af5-adfe-de32bfdbb62a",
+              "name": "Not found - resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "similar",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the article to find similar articles for."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "2cdb8e7b-7c27-447e-9b89-617dfcb8284e",
+      "name": "Articles",
+      "description": {
+        "content": "Retrieve specific articles by UUID.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b0268a24-3d61-4410-99b8-e91f86bd6bc0",
+          "name": "Get News Article By UUID",
+          "request": {
+            "name": "Get News Article By UUID",
+            "description": {
+              "content": "Retrieve a specific news article by its unique UUID identifier.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "uuid",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the article to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "31ab8018-ffe4-49b5-a2de-8c26a26c118f",
+              "name": "The requested article.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "uuid",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the article to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"uuid\": \"string\",\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"keywords\": \"string\",\n  \"snippet\": \"string\",\n  \"url\": \"https://SAFHthTkGLUcUuFLhptHMgB.lhoEo-OYRXH6pkNeFVNsl-O6KMq5SbG+2jIeWlGihfeOOh0Jm3InWtmbHJTMUz49P\",\n  \"image_url\": \"http://BkYyvAvEWeqyIvwNFvjsTnNufkrmJYqOY.qoqgJqZpnr6jZToujKP1IuJs-tdkdMY5hPQ-.\",\n  \"language\": \"string\",\n  \"published_at\": \"1993-06-08T23:36:59.423Z\",\n  \"source\": \"string\",\n  \"categories\": [\n    \"string\",\n    \"string\"\n  ],\n  \"locale\": \"string\",\n  \"relevance_score\": 6541.382475648203\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d28c385d-d759-4602-97de-f75ff1c86fa7",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "uuid",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the article to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4417da2d-8d36-4d8e-9e7f-65c9535d2812",
+              "name": "Not found - resource does not exist.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "uuid",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the article to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "a5b5a533-87f2-44e5-9420-4764c1dc3a8f",
+      "name": "Sources",
+      "description": {
+        "content": "Available news sources and their metadata.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef4f9617-552a-4022-aa36-1627149a574a",
+          "name": "Get News Sources",
+          "request": {
+            "name": "Get News Sources",
+            "description": {
+              "content": "Retrieve available news sources and their metadata including domain, language, locale, and categories covered. Returns 50 results per page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "sources"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                },
+                {
+                  "disabled": false,
+                  "key": "categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to filter sources by."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Comma-separated language codes to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination (50 sources per page)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e46425bf-9af1-4de3-a9bf-8c00b3583c57",
+              "name": "List of news sources.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"found\": 5217,\n    \"returned\": 7725,\n    \"limit\": 9487,\n    \"page\": 7538\n  },\n  \"data\": [\n    {\n      \"source_id\": \"string\",\n      \"domain\": \"string\",\n      \"language\": \"string\",\n      \"locale\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"source_id\": \"string\",\n      \"domain\": \"string\",\n      \"language\": \"string\",\n      \"locale\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "095909a7-6864-4f45-b329-87a9ccac9b9d",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "sources"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.thenewsapi.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "06c8d8a6-6eea-4450-a2ef-17a3c36a603d",
+    "name": "The News API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.",
+      "type": "text/plain"
+    }
+  }
+}
