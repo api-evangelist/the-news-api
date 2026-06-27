@@ -37,7 +37,7 @@ apis:
     properties:
       - type: Documentation
         url: https://www.thenewsapi.com/documentation
-      - type: SignUp
+      - type: Signup
         url: https://www.thenewsapi.com/register
       - type: Authentication
         url: https://www.thenewsapi.com/documentation#auth
@@ -48,7 +48,7 @@ common:
     url: https://www.thenewsapi.com/
   - type: Documentation
     url: https://www.thenewsapi.com/documentation
-  - type: SignUp
+  - type: Signup
     url: https://www.thenewsapi.com/register
   - type: Pricing
     url: https://www.thenewsapi.com/pricing
