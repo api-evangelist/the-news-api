@@ -44,6 +44,10 @@ apis:
       - type: OpenAPI
         url: openapi/the-news-api-openapi.yml
 common:
+  - type: DomainSecurity
+    url: security/the-news-api-domain-security.yml
+  - type: Authentication
+    url: authentication/the-news-api-authentication.yml
   - type: Website
     url: https://www.thenewsapi.com/
   - type: Documentation

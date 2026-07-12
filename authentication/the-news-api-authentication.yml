@@ -1,0 +1,15 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/the-news-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiToken
+  type: apiKey
+  in: query
+  parameter: api_token
+  sources:
+  - openapi/the-news-api-openapi.yml
