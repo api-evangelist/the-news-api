@@ -44,6 +44,8 @@ apis:
       - type: OpenAPI
         url: openapi/the-news-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/the-news-api-agentic-access.yml
   - type: DomainSecurity
     url: security/the-news-api-domain-security.yml
   - type: Authentication
