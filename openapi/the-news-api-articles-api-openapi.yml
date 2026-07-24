@@ -1,0 +1,128 @@
+openapi: 3.0.3
+info:
+  title: The News All News Articles API
+  description: The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.
+  version: 1.0.0
+  contact:
+    url: https://www.thenewsapi.com/
+  termsOfService: https://www.thenewsapi.com/terms
+servers:
+- url: https://api.thenewsapi.com/v1
+security:
+- apiToken: []
+tags:
+- name: Articles
+  description: Retrieve specific articles by UUID.
+paths:
+  /news/uuid/{uuid}:
+    get:
+      operationId: getNewsByUUID
+      summary: Get News Article By UUID
+      description: Retrieve a specific news article by its unique UUID identifier.
+      tags:
+      - Articles
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        description: UUID of the article to retrieve.
+        schema:
+          type: string
+      - name: api_token
+        in: query
+        required: true
+        description: Your API authentication token.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: The requested article.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    Article:
+      type: object
+      description: A news article.
+      properties:
+        uuid:
+          type: string
+          description: Unique identifier for the article.
+        title:
+          type: string
+          description: Article headline.
+        description:
+          type: string
+          description: Short description of the article.
+        keywords:
+          type: string
+          description: Comma-separated keywords associated with the article.
+        snippet:
+          type: string
+          description: Short excerpt from the article body.
+        url:
+          type: string
+          format: uri
+          description: URL to the full article.
+        image_url:
+          type: string
+          format: uri
+          description: URL to the article's featured image.
+        language:
+          type: string
+          description: Language code of the article (e.g., en, es, fr).
+        published_at:
+          type: string
+          format: date-time
+          description: Publication datetime in UTC.
+        source:
+          type: string
+          description: Domain of the publishing source.
+        categories:
+          type: array
+          items:
+            type: string
+          description: Categories the article belongs to.
+        locale:
+          type: string
+          description: Country/locale code (e.g., us, gb, ca).
+        relevance_score:
+          type: number
+          nullable: true
+          description: Relevance score for search results or similarity matching.
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
+  responses:
+    Unauthorized:
+      description: Unauthorized - invalid API token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    NotFound:
+      description: Not found - resource does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      name: api_token
+      in: query

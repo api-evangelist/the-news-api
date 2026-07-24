@@ -1,0 +1,230 @@
+openapi: 3.0.3
+info:
+  title: The News All News Similar News API
+  description: The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.
+  version: 1.0.0
+  contact:
+    url: https://www.thenewsapi.com/
+  termsOfService: https://www.thenewsapi.com/terms
+servers:
+- url: https://api.thenewsapi.com/v1
+security:
+- apiToken: []
+tags:
+- name: Similar News
+  description: Articles similar to a given article.
+paths:
+  /news/similar/{uuid}:
+    get:
+      operationId: getSimilarNews
+      summary: Get Similar News Articles
+      description: Find articles similar to a specific article identified by its UUID. Returns articles ranked by relevance_score indicating similarity strength.
+      tags:
+      - Similar News
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        description: UUID of the article to find similar articles for.
+        schema:
+          type: string
+      - name: api_token
+        in: query
+        required: true
+        description: Your API authentication token.
+        schema:
+          type: string
+      - name: language
+        in: query
+        required: false
+        description: Comma-separated language codes to filter by.
+        schema:
+          type: string
+      - name: categories
+        in: query
+        required: false
+        description: Comma-separated categories to filter by.
+        schema:
+          type: string
+      - name: exclude_categories
+        in: query
+        required: false
+        description: Comma-separated categories to exclude.
+        schema:
+          type: string
+      - name: domains
+        in: query
+        required: false
+        description: Comma-separated domains to include.
+        schema:
+          type: string
+      - name: exclude_domains
+        in: query
+        required: false
+        description: Comma-separated domains to exclude.
+        schema:
+          type: string
+      - name: source_ids
+        in: query
+        required: false
+        description: Comma-separated source IDs to include.
+        schema:
+          type: string
+      - name: exclude_source_ids
+        in: query
+        required: false
+        description: Comma-separated source IDs to exclude.
+        schema:
+          type: string
+      - name: published_before
+        in: query
+        required: false
+        description: Filter by publication date upper bound.
+        schema:
+          type: string
+      - name: published_after
+        in: query
+        required: false
+        description: Filter by publication date lower bound.
+        schema:
+          type: string
+      - name: published_on
+        in: query
+        required: false
+        description: Filter to exact publication date.
+        schema:
+          type: string
+          format: date
+      - name: limit
+        in: query
+        required: false
+        description: Number of similar articles to return.
+        schema:
+          type: integer
+          minimum: 1
+      - name: page
+        in: query
+        required: false
+        description: Page number for pagination.
+        schema:
+          type: integer
+          minimum: 1
+          default: 1
+      responses:
+        '200':
+          description: List of similar articles ranked by relevance score.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NewsListResponse'
+        '404':
+          $ref: '#/components/responses/NotFound'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  responses:
+    NotFound:
+      description: Not found - resource does not exist.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized - invalid API token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+  schemas:
+    NewsListResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Article'
+          description: Array of news articles.
+    Meta:
+      type: object
+      description: Pagination metadata.
+      properties:
+        found:
+          type: integer
+          description: Total number of articles matching the query.
+        returned:
+          type: integer
+          description: Number of articles returned on this page.
+        limit:
+          type: integer
+          description: Maximum results per page.
+        page:
+          type: integer
+          description: Current page number.
+    Article:
+      type: object
+      description: A news article.
+      properties:
+        uuid:
+          type: string
+          description: Unique identifier for the article.
+        title:
+          type: string
+          description: Article headline.
+        description:
+          type: string
+          description: Short description of the article.
+        keywords:
+          type: string
+          description: Comma-separated keywords associated with the article.
+        snippet:
+          type: string
+          description: Short excerpt from the article body.
+        url:
+          type: string
+          format: uri
+          description: URL to the full article.
+        image_url:
+          type: string
+          format: uri
+          description: URL to the article's featured image.
+        language:
+          type: string
+          description: Language code of the article (e.g., en, es, fr).
+        published_at:
+          type: string
+          format: date-time
+          description: Publication datetime in UTC.
+        source:
+          type: string
+          description: Domain of the publishing source.
+        categories:
+          type: array
+          items:
+            type: string
+          description: Categories the article belongs to.
+        locale:
+          type: string
+          description: Country/locale code (e.g., us, gb, ca).
+        relevance_score:
+          type: number
+          nullable: true
+          description: Relevance score for search results or similarity matching.
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
+  securitySchemes:
+    apiToken:
+      type: apiKey
+      name: api_token
+      in: query
