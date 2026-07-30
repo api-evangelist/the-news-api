@@ -6,9 +6,22 @@ description: >-
   date. The API supports boolean search operators, pagination, and returns structured article data including headlines,
   descriptions, images, and category classifications.
 kind: contract
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/the-news-api.png
 tags:
   - Articles
   - Headlines
@@ -21,28 +34,102 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/the-news-api/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: the-news-api:the-news-api
-    name: The News API
-    description: >-
-      Get free access to search worldwide news and top stories from over 40,000 sources in 50 countries. Access live and
-      historical articles with filters for keyword, category, language, locale, domain, and publication date.
-    humanURL: https://www.thenewsapi.com/
-    baseURL: https://api.thenewsapi.com/v1
-    tags:
-      - Articles
-      - Headlines
-      - News
-      - Search
-      - International
-    properties:
-      - type: Documentation
-        url: https://www.thenewsapi.com/documentation
-      - type: Signup
-        url: https://www.thenewsapi.com/register
-      - type: Authentication
-        url: https://www.thenewsapi.com/documentation#auth
-      - type: OpenAPI
-        url: openapi/the-news-api-openapi.yml
+- aid: the-news-api:the-news-api-all-news-api
+  name: The News API All News API
+  description: Full historical and live article database search.
+  humanURL: https://www.thenewsapi.com/
+  baseURL: https://api.thenewsapi.com/v1
+  tags:
+  - All News
+  properties:
+  - type: OpenAPI
+    url: openapi/the-news-api-all-news-api-openapi.yml
+  - type: Documentation
+    url: https://www.thenewsapi.com/documentation
+  - type: Signup
+    url: https://www.thenewsapi.com/register
+  - type: Authentication
+    url: https://www.thenewsapi.com/documentation#auth
+- aid: the-news-api:the-news-api-articles-api
+  name: The News API Articles API
+  description: Retrieve specific articles by UUID.
+  humanURL: https://www.thenewsapi.com/
+  baseURL: https://api.thenewsapi.com/v1
+  tags:
+  - Articles
+  properties:
+  - type: OpenAPI
+    url: openapi/the-news-api-articles-api-openapi.yml
+  - type: Documentation
+    url: https://www.thenewsapi.com/documentation
+  - type: Signup
+    url: https://www.thenewsapi.com/register
+  - type: Authentication
+    url: https://www.thenewsapi.com/documentation#auth
+- aid: the-news-api:the-news-api-headlines-api
+  name: The News API Headlines API
+  description: Latest headlines organized by category.
+  humanURL: https://www.thenewsapi.com/
+  baseURL: https://api.thenewsapi.com/v1
+  tags:
+  - Headlines
+  properties:
+  - type: OpenAPI
+    url: openapi/the-news-api-headlines-api-openapi.yml
+  - type: Documentation
+    url: https://www.thenewsapi.com/documentation
+  - type: Signup
+    url: https://www.thenewsapi.com/register
+  - type: Authentication
+    url: https://www.thenewsapi.com/documentation#auth
+- aid: the-news-api:the-news-api-similar-news-api
+  name: The News API Similar News API
+  description: Articles similar to a given article.
+  humanURL: https://www.thenewsapi.com/
+  baseURL: https://api.thenewsapi.com/v1
+  tags:
+  - Similar News
+  properties:
+  - type: OpenAPI
+    url: openapi/the-news-api-similar-news-api-openapi.yml
+  - type: Documentation
+    url: https://www.thenewsapi.com/documentation
+  - type: Signup
+    url: https://www.thenewsapi.com/register
+  - type: Authentication
+    url: https://www.thenewsapi.com/documentation#auth
+- aid: the-news-api:the-news-api-sources-api
+  name: The News API Sources API
+  description: Available news sources and their metadata.
+  humanURL: https://www.thenewsapi.com/
+  baseURL: https://api.thenewsapi.com/v1
+  tags:
+  - Sources
+  properties:
+  - type: OpenAPI
+    url: openapi/the-news-api-sources-api-openapi.yml
+  - type: Documentation
+    url: https://www.thenewsapi.com/documentation
+  - type: Signup
+    url: https://www.thenewsapi.com/register
+  - type: Authentication
+    url: https://www.thenewsapi.com/documentation#auth
+- aid: the-news-api:the-news-api-top-stories-api
+  name: The News API Top Stories API
+  description: Top stories filtered by keyword, category, and date.
+  humanURL: https://www.thenewsapi.com/
+  baseURL: https://api.thenewsapi.com/v1
+  tags:
+  - Top Stories
+  properties:
+  - type: OpenAPI
+    url: openapi/the-news-api-top-stories-api-openapi.yml
+  - type: Documentation
+    url: https://www.thenewsapi.com/documentation
+  - type: Signup
+    url: https://www.thenewsapi.com/register
+  - type: Authentication
+    url: https://www.thenewsapi.com/documentation#auth
 common:
   - type: AgenticAccess
     url: agentic-access/the-news-api-agentic-access.yml
