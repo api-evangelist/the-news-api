@@ -1,0 +1,24 @@
+{
+  "provider": "the-news-api",
+  "sources": [
+    "the-news-api-all-news-api-openapi.yml",
+    "the-news-api-articles-api-openapi.yml",
+    "the-news-api-headlines-api-openapi.yml",
+    "the-news-api-similar-news-api-openapi.yml",
+    "the-news-api-sources-api-openapi.yml",
+    "the-news-api-top-stories-api-openapi.yml"
+  ],
+  "outputs": [
+    "the-news-api-all-news-api-openapi.yml",
+    "the-news-api-articles-api-openapi.yml",
+    "the-news-api-headlines-api-openapi.yml",
+    "the-news-api-similar-news-api-openapi.yml",
+    "the-news-api-sources-api-openapi.yml",
+    "the-news-api-top-stories-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
