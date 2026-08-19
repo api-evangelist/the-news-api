@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The News All News Top Stories API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_token",
+      "value": "{{api_token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Top Stories",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Top Stories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/top",
+            "params": [
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search query with boolean operators: + (AND), | (OR), - (negation), \" (phrase), * (prefix), () (precedence)."
+              },
+              {
+                "name": "search_fields",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated fields to search: title, description, keywords, main_text. Default: title,main_text."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated country codes to filter by."
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories: general, science, sports, business, health, entertainment, tech, politics, food, travel."
+              },
+              {
+                "name": "exclude_categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to exclude."
+              },
+              {
+                "name": "domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to include."
+              },
+              {
+                "name": "exclude_domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to exclude."
+              },
+              {
+                "name": "source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to include."
+              },
+              {
+                "name": "exclude_source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to exclude."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated language codes to filter by."
+              },
+              {
+                "name": "published_before",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published before this datetime (Y-m-d\\TH:i:s)."
+              },
+              {
+                "name": "published_after",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published after this datetime."
+              },
+              {
+                "name": "published_on",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published on this exact date (Y-m-d)."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort by published_at (default) or relevance_score."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page (plan-dependent maximum)."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination (default 1, max result set 20,000)."
+              }
+            ]
+          },
+          "docs": "Retrieve live and historical top stories globally or filtered by keyword, category, country, language, domain, or date. Supports advanced boolean search operators."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

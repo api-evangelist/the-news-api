@@ -1,0 +1,141 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "The News All News API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_token",
+      "value": "{{api_token}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "All News",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get All News",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.thenewsapi.com/v1/news/all",
+            "params": [
+              {
+                "name": "api_token",
+                "value": "",
+                "type": "query",
+                "description": "Your API authentication token."
+              },
+              {
+                "name": "search",
+                "value": "",
+                "type": "query",
+                "description": "Search query with boolean operators: + (AND), | (OR), - (negation), \" (phrase), * (prefix), () (precedence)."
+              },
+              {
+                "name": "search_fields",
+                "value": "",
+                "type": "query",
+                "description": "Fields to search (title, description, keywords, main_text)."
+              },
+              {
+                "name": "locale",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated country codes."
+              },
+              {
+                "name": "categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to include."
+              },
+              {
+                "name": "exclude_categories",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated categories to exclude."
+              },
+              {
+                "name": "domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to include."
+              },
+              {
+                "name": "exclude_domains",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated domains to exclude."
+              },
+              {
+                "name": "source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to include."
+              },
+              {
+                "name": "exclude_source_ids",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated source IDs to exclude."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Comma-separated language codes."
+              },
+              {
+                "name": "published_before",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published before this datetime."
+              },
+              {
+                "name": "published_after",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published after this datetime."
+              },
+              {
+                "name": "published_on",
+                "value": "",
+                "type": "query",
+                "description": "Filter to articles published on this exact date."
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "Sort by published_at or relevance_score."
+              },
+              {
+                "name": "limit",
+                "value": "",
+                "type": "query",
+                "description": "Number of results per page."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page number for pagination."
+              }
+            ]
+          },
+          "docs": "Access the complete historical and live article database. Same filtering and search capabilities as the Top Stories endpoint but covers the full news archive."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

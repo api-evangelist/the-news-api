@@ -1,0 +1,662 @@
+{
+  "item": [
+    {
+      "id": "96f277ee-c7ed-407f-baaf-40a56ee5d957",
+      "name": "Headlines",
+      "description": {
+        "content": "Latest headlines organized by category.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "92a4883d-4c03-4012-beab-22958c00d3dd",
+          "name": "Get News Headlines",
+          "request": {
+            "name": "Get News Headlines",
+            "description": {
+              "content": "Retrieve the latest headlines organized by category. Available on Standard plan and above. Returns articles grouped by category with optional similar article suggestions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "headlines"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Comma-separated list of country codes to filter by (e.g., us,ca,gb)."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Comma-separated list of language codes to filter by (e.g., en,es,fr)."
+                },
+                {
+                  "disabled": false,
+                  "key": "categories",
+                  "value": "<string>",
+                  "description": "Comma-separated list of categories: general, science, sports, business, health, entertainment, tech, politics, food, travel."
+                },
+                {
+                  "disabled": false,
+                  "key": "domains",
+                  "value": "<string>",
+                  "description": "Comma-separated list of domains to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_domains",
+                  "value": "<string>",
+                  "description": "Comma-separated list of domains to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of source IDs to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated list of source IDs to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_on",
+                  "value": "<date>",
+                  "description": "Filter to articles published on a specific date (Y-m-d format)."
+                },
+                {
+                  "disabled": false,
+                  "key": "headlines_per_category",
+                  "value": "6",
+                  "description": "Number of articles per category (max 10, default 6)."
+                },
+                {
+                  "disabled": false,
+                  "key": "include_similar",
+                  "value": "true",
+                  "description": "Include similar articles in the response (default true)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "58d63d70-c4eb-44d4-adb2-b6d591d7e00a",
+              "name": "Headlines organized by category.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": {\n    \"general\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://zl.uxgqe8Qg,GLWsBAuuZXUt-OEC4B+.zqo4vHWIhMx\",\n        \"image_url\": \"http://yqA.iotwBOEFnCurlMEuNEgqc2yQLMHZQ4bI\",\n        \"language\": \"string\",\n        \"published_at\": \"1979-10-26T16:35:01.323Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 5028.585816456485,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://dOixPb.iqekOm986phMCsiIVb0hNsEMoDFZQr9wDOrApsGCJUX5nUKPCaoaIMXWSvbj9h-n\",\n            \"image_url\": \"https://qNfQapVnlRJY.lpdFeg3,VIzp\",\n            \"language\": \"string\",\n            \"published_at\": \"1996-11-21T07:41:54.953Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7884.704853166118\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://EDRPifvzVTwbSh.xuvUpDv3z-nb+msxD.\",\n            \"image_url\": \"https://VapCwHtBrlDydrEKNQRPAVRIQzXKxhj.lffCefLconb0lDJn20eYJ9rK2GadJRfFFc+TX,OuQ.ZuklqyUks,5sV7dBXJq0ua4kZsoxMc\",\n            \"language\": \"string\",\n            \"published_at\": \"2018-04-05T00:08:52.292Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 5256.760831450022\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://eEFCRNFvnBsnkKStWoIPmVpoOFOpqky.trZCg53CtLzzFfxEsK.LuF\",\n        \"image_url\": \"http://NTtLBoQhGgeGiDfJkGVpVRZgXwEySWxxi.kkm0UhY2hyh6An-pRGVaZF6gfwFEHqeu4XrLTz1qN\",\n        \"language\": \"string\",\n        \"published_at\": \"1957-01-26T01:15:56.616Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 3937.2906506140303,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://AMkUPVqyDQXxGmzVOocYuxR.wlwbernFLCPQtUx1LUDg8cYl3-lIeWme+ah2Z-kczcmkd5Ss\",\n            \"image_url\": \"https://kJofdSNwjORZQCCCEOBaBjUfTECzRjU.wjbdJvqvG3DJtn\",\n            \"language\": \"string\",\n            \"published_at\": \"1993-12-24T00:41:00.911Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6125.263145844353\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://sN.swxrv8Kx8qOkCOgeBot-2JjxRtufEFW1ESDTn1BpyV4wG7Pr3V8px,miroWQjOIvwWsX\",\n            \"image_url\": \"http://RWFpYuQbIsszRFhYaT.bumoggIFA1tV3ifS+DDIyv2Y0ipU.fOTF3C6\",\n            \"language\": \"string\",\n            \"published_at\": \"2008-12-09T10:15:39.423Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 4122.409652704558\n          }\n        ]\n      }\n    ],\n    \"business\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://nZNXogYfuIHdx.mbgfxggr,UAK542ca7M3+v1tK6yFDXD\",\n        \"image_url\": \"http://ToqFDnVrGimiUnyNBPRRfwX.owzsiBVsxmkjJcgS3pyYJ1n7i1l7YzXnPqtZL\",\n        \"language\": \"string\",\n        \"published_at\": \"1970-07-24T13:12:52.338Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 4346.567330298049,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://xnHsAWQOPlkvQRFprTgadaQkGJTysX.lyba1zzXnhgz+04iFiNUoIW8JsuxK6ou4b+elgJMp3p8.ygXH\",\n            \"image_url\": \"http://NezgFIIqWyqJBOfGNPxcXvdlsMcXIW.hzzeIWQ7WWDNkLcwHraIGM4N.i.AAkydRPhdqlGzjnAe,\",\n            \"language\": \"string\",\n            \"published_at\": \"1966-01-18T19:37:05.811Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7672.874303738022\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://TYkWMEnLlxbRFyEBMyheDxqOhwVW.suxwl0D8X4bqiwqMgPtZvHr\",\n            \"image_url\": \"https://pGbDdghYljLfP.nzwMMg3CliaTQ-KiupcYGdDB10CHPH3WT+8s7Xx8fx\",\n            \"language\": \"string\",\n            \"published_at\": \"1999-03-29T11:14:29.405Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 953.0662200304063\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://PbAkOVIXzq.wfQRkdWRSO\",\n        \"image_url\": \"http://WdwVTbjpqUyzdHuntVPHEako.zntxYHQ7hFcPkqtWNmVF.fp+iFNpwtA3IFWpmU\",\n        \"language\": \"string\",\n        \"published_at\": \"1993-05-15T17:20:51.697Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 8673.670711100955,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://zdcEFOpsSBSjdiDSPtw.lyuN\",\n            \"image_url\": \"https://EjUYJXiuYdHan.hncaXTmt43fC\",\n            \"language\": \"string\",\n            \"published_at\": \"1950-07-20T15:06:13.282Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 8472.331661611783\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://gGJnTeVRNRZjAukIelFgaciIDoNBTbw.vrW2AQr\",\n            \"image_url\": \"https://FLKkNAhPwsivWN.gfoFY6R5E-pS7JxvlVMMAfIl3K,5.3\",\n            \"language\": \"string\",\n            \"published_at\": \"1960-02-24T03:04:55.633Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 4333.967066337053\n          }\n        ]\n      }\n    ],\n    \"sports\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://IxnheuaCsAHlEpmhcCGj.kuwzJaGAG2frndjYvTzWuTuKPEKjmbUGCyvJTZkILrJmMgB+Mux.4s-\",\n        \"image_url\": \"http://XIglRIPucmCsbVvcuNRwSYBqjaOZ.qtdMxMfLe\",\n        \"language\": \"string\",\n        \"published_at\": \"2004-02-26T10:28:27.452Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 3933.716646881238,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://DWVqSNqGuMUNfxRfxqYOfjqQbOaspCK.krPJER.bUdDPWaFZHzgQc\",\n            \"image_url\": \"http://EioqPNsFIRZRiVEEp.xpCbT.1RcQH7e+vtgbkPzMRHNL.Vt-u8dQ.VcZIiF3t6,on6k,.jDHl01U,hFyuCXJO\",\n            \"language\": \"string\",\n            \"published_at\": \"2016-04-06T04:39:43.511Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2848.180833242806\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://oKYIgAASrxTQGHzZIaEjivZVUSmBhIFWI.upla9nb8b+.lkJuT89MHV0EjV+tbC5oVSBsOsR--H\",\n            \"image_url\": \"http://AQfLnyLgIoLqBPbzlBq.xbmeJldD,HEhfqrCte47jEsrGO0en3tqTFc-ih9tPvSzwTdWU,-ecmbU.\",\n            \"language\": \"string\",\n            \"published_at\": \"1975-11-16T18:24:46.319Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6886.50336420506\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://jQQkURPEyCR.pnphZOIJYhamy2W.p7PFcYPzHsndjxJ39trzDozwmAqtCt\",\n        \"image_url\": \"https://VRAcVqvVc.rwjvRZgv\",\n        \"language\": \"string\",\n        \"published_at\": \"2003-11-03T00:30:11.676Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 4366.473227574148,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://oYtPEUsDAFArzBuFipzTUPUfARAqJAz.kgowgVWGk7eLerZ.2JF2DlYbKWQ\",\n            \"image_url\": \"https://XpQKKSQkAHk.mobI-3Ndm72bhMOqCIQGtKbkcB1iFNSO6NC\",\n            \"language\": \"string\",\n            \"published_at\": \"1969-04-17T03:49:43.740Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1873.1745109211583\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://z.mipxMuFSHvuCshMPSozwlSOuQ0da\",\n            \"image_url\": \"http://zvlNckCByJBxAtlepYVRBPPjgr.wpfCo.2RvQWs,TYiDwfdQx7\",\n            \"language\": \"string\",\n            \"published_at\": \"2020-08-11T15:58:29.299Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 9202.502425528595\n          }\n        ]\n      }\n    ],\n    \"tech\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://PgKXNRedweAhWJWPngccdofMcbRW.qwqdciFjHHFNOPXB4LzHlhFaARW60vNxZRLjCeNAoE+56PggnJ\",\n        \"image_url\": \"https://oTGpZDnZTAKrzKPhtgLDtriknZKbIlxN.gnuX2mb7kTKz+ZdQf,CuhXgYPJyUE\",\n        \"language\": \"string\",\n        \"published_at\": \"1987-04-15T07:24:26.538Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 1857.6387588433984,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://LElhunTmLqWavwSKaLzkeMPZ.tpFP0iCEG6qBGRY.-0PnA+-lbqBBUEf\",\n            \"image_url\": \"https://jwtFLyHlJguceLNLwVSMqKROjtEoUQ.mujtf\",\n            \"language\": \"string\",\n            \"published_at\": \"1979-06-25T15:28:17.933Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 8530.156518870439\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://ehyWkXKWuDAMElYavIisR.ggjkD,7Z+SrpgwdRuc7EpQZgCVbVGmYK6tO9gah9amWhsbhXPh\",\n            \"image_url\": \"https://Jyu.yvRalh6QCWI-ZgPBLE,sDlhcZ4OGGPJ1r3\",\n            \"language\": \"string\",\n            \"published_at\": \"2005-02-12T04:56:56.666Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1488.0686227733609\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://MYxsDXsDZjA.wnwy2hDsrYFiiuqgZVRq0vernElAuvM4ntN+Z0sgRb2AGtkBuFeaJqQ.XNWg1XwT13.iys1z8\",\n        \"image_url\": \"https://rkLDVBJDQqYiiMSmlmOiKNuzQYkVYvnM.qrLok4QgnFARmZ6+8vKBAKbjvvX8nGnrY\",\n        \"language\": \"string\",\n        \"published_at\": \"1950-12-19T04:34:22.880Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 20.07661704203634,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://RFENnyOmALb.sssJUgfzpvr7,\",\n            \"image_url\": \"https://cUGcUgkVtw.gksrFsPMf5DpbvUirAhUrDHG\",\n            \"language\": \"string\",\n            \"published_at\": \"2003-05-08T19:14:27.998Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 8284.800357703438\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://MRllsCMtzJYFXxgGZgf.wflyl0t0gNIRgtesbo9qDg+kRV5Tjd7.enqpEqsW1BMBFgcDl9vRGYO\",\n            \"image_url\": \"http://UMjHAXqWVndcGkKzykeabZvZDwV.wmwpDPAc6\",\n            \"language\": \"string\",\n            \"published_at\": \"1960-01-20T01:59:42.764Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3704.715684282921\n          }\n        ]\n      }\n    ],\n    \"science\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://kGZgPeVmCPMdsCjwS.tfmePlrSVfNfdUBzGcE3iNBe\",\n        \"image_url\": \"https://YzkZiiRhPMdNj.giucCRC9b9bPDrsRuue7s9kOFRa9oLY0PYLVXbV2ZmccW\",\n        \"language\": \"string\",\n        \"published_at\": \"2003-10-08T06:08:43.186Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 9916.849133148293,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://RTaSQdPuCiYTLQkFUDkTe.bjCiLJ,\",\n            \"image_url\": \"https://MWRxdlqhKeBfWlZ.oggy2VhXipBnAO5fuR+DmpMBXPP\",\n            \"language\": \"string\",\n            \"published_at\": \"2017-01-14T15:16:06.390Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7966.670314851425\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://GXzgduIzZSrMduKGPBD.whwSVp5IGVehhgDkQNpJTT\",\n            \"image_url\": \"http://yNLrrxkXZwvgAFTKKqPzRqySpBz.sjnfCG5zi\",\n            \"language\": \"string\",\n            \"published_at\": \"1947-07-24T17:01:13.592Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 5301.426816429938\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://IQALmDOrYbRDPpSVvQzJYTJIgNzqFQvXL.ivaajiIFq4tvZX2G4IqXhe\",\n        \"image_url\": \"http://OWkxEfzgjazbdYUzyNG.ojqaznU\",\n        \"language\": \"string\",\n        \"published_at\": \"1974-12-08T07:26:44.756Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 7045.58211787401,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://iMQjwRZvUexFMSnTdjWaiQELRItl.gkzeCrNhKXL\",\n            \"image_url\": \"http://JWtFqWYBHDMFSfhoGrnMCKsDLByXZuXh.ksezM1r3MXd9l\",\n            \"language\": \"string\",\n            \"published_at\": \"1968-08-07T18:34:44.630Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6695.803073738453\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://jJYmqYsTyStaxAblsPqnjOPJe.xgjxiOyE7BaAxKD\",\n            \"image_url\": \"https://yqzbm.jmjqCcGFgtmJmjVxIrLOwp7J9u1SHqBglP6gIOW\",\n            \"language\": \"string\",\n            \"published_at\": \"2020-01-26T09:57:18.073Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2386.6153252458653\n          }\n        ]\n      }\n    ],\n    \"health\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://Po.ydcst.Lg2hEyF-tj-EMK,aQsO487nRXaCHiKtiko5J8\",\n        \"image_url\": \"https://uRmyRdpZvXONNrGRRWCOiq.wziXZO9GMj\",\n        \"language\": \"string\",\n        \"published_at\": \"2000-03-01T07:32:16.216Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 9671.46519942031,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://ZVGYmTALwFAvoAqtITuKBGPWUiYfwrZ.uuzfUMjHwsiLEZidAPW6xbVJvHi.Qz.1+N\",\n            \"image_url\": \"http://kWkaGlJBFAIbdccxUj.hfskJxfpq3vU+qQdmDi9A.gwZQl3vORM7DLe\",\n            \"language\": \"string\",\n            \"published_at\": \"1967-07-28T00:06:18.488Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 489.5151255017072\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://lPFjecOG.bneuPIJGHE2QjF\",\n            \"image_url\": \"https://piTvwmPbPPctWgZGesQy.wgxRIt0aFFhS4sa\",\n            \"language\": \"string\",\n            \"published_at\": \"1965-08-04T15:10:36.485Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6821.83390766375\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://PZzlBDUYPwypPBZOdx.gbMJPwbOHGnHw8bGZqYoaxwk1V,C3BqTC8vRMWd4AvmNz1UfaIKia07l\",\n        \"image_url\": \"http://oKEUOznhcuxA.oqllVmxVcql\",\n        \"language\": \"string\",\n        \"published_at\": \"2000-12-06T04:33:53.252Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 8988.472362762534,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://CVacpphPwUOBXChxIPyXeJQVfhickmspt.bhLNyTEJENTzJ\",\n            \"image_url\": \"https://HHYsMjHhlu.xlmzeOJxNlrfWtohWrMVzdFRqnKJ5dhzU\",\n            \"language\": \"string\",\n            \"published_at\": \"2013-09-15T09:11:34.760Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7060.98574062558\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://lmGdzvTfNdlSEvrfTBbauJFkIQki.gbikIVQicw-V119ivg\",\n            \"image_url\": \"https://uUXynRwyaLTKngiDV.jtbDqg93giFwcsEOfcnQFTgseyho4mUfbzJUoduWtFc0Y41T2ScjgNmwMtmnreCw\",\n            \"language\": \"string\",\n            \"published_at\": \"1983-09-10T05:38:41.147Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1750.69523461192\n          }\n        ]\n      }\n    ],\n    \"entertainment\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://acxgVBJvwoOdkNG.jgbKhLq9XFiv80nUDLd0ASD+Kbwjb,lMDSzotRa920hY22ZvUe8rT\",\n        \"image_url\": \"http://ZIAGSxfyprSgBtzsEWvZuaMrlW.srflCPlG0rPQt8lQionDClazxOrf\",\n        \"language\": \"string\",\n        \"published_at\": \"1975-03-29T19:40:38.559Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 8664.505940957395,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://BsPrbJWOehdviopHyRVZ.hhoQaB,OsTnezZR9kd7+Eyypvj4xTWHY8WnMU8Bwlhnmk-VUXpJg1yNST\",\n            \"image_url\": \"https://rfpuPjIbujTAyAuv.ngirz\",\n            \"language\": \"string\",\n            \"published_at\": \"1976-05-30T00:49:38.544Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 1831.706667941493\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://ROpTvNIPZlSly.rcizqAbrXXw9fMwLPyGsb6KPzV,UpghGsalzcYta58\",\n            \"image_url\": \"https://NaNWkVVYQokjMkWXh.qjqvsZ9T9pu-dOr6xBhB.IaMP2qPGOepLM\",\n            \"language\": \"string\",\n            \"published_at\": \"2010-05-31T03:24:13.075Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7037.669925308123\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://grGduZ.xspMSMwbduBBH82BDRDemXKu4U7MZ\",\n        \"image_url\": \"https://AEc.fbfSqwQ4lWQXArgqZP.3WQjXq6jnv\",\n        \"language\": \"string\",\n        \"published_at\": \"1986-09-13T19:24:50.654Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 137.49144880442321,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://qASE.kpcqeKL0IaRxpslARNHNHrnhkQx22ntTj5Kk1qrRlTILKnHz0+jVAq58GU\",\n            \"image_url\": \"https://HxPKZNqfUyD.tqY4nEVMe1.8qCme6ICLgicMYMR+ANazrAfV,eYowLmBEX5\",\n            \"language\": \"string\",\n            \"published_at\": \"2019-02-02T01:12:48.658Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 8541.059048713985\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://vybdBLJWhYlhqYxGfwTPAPhtR.xruxAkanvyEjIUe83o,W+3M4PcnHcxUztRLQe5WX3lMyDf0\",\n            \"image_url\": \"http://actXcdgHXXvqEZLb.pntjStumRfkwVxajKb5XV1N8kbje8xoM\",\n            \"language\": \"string\",\n            \"published_at\": \"1964-03-28T21:38:48.890Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 4348.654626728283\n          }\n        ]\n      }\n    ],\n    \"politics\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://ByEjqjujIZLrkOQPaMxOybDLndfsoQi.nerZNfO5o7QIFfwc.ljCMiaaAkj5FrCDFN8Ho05\",\n        \"image_url\": \"https://Tb.gmmsnOPeSBWcYeaOi2O\",\n        \"language\": \"string\",\n        \"published_at\": \"2023-08-27T16:03:13.720Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 7119.77333858305,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://lL.sgnpr2sy-HVpDACVgal.UvvVkp8vRLlUw4Hh,7ByJu22z\",\n            \"image_url\": \"https://NxOWuQkp.opv-1dhZ\",\n            \"language\": \"string\",\n            \"published_at\": \"1951-09-01T01:18:40.533Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3662.497385596837\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://SLCpzKUYVBCBQxVHD.mtaBHKt+mkQqYlc-DpEOsP\",\n            \"image_url\": \"https://jZXQxzkXjpMEbmcQYiloaUdPSozugeU.ysflz04FC..AWqB4YwvRAig.gxN59zMSJzqmSbQ8\",\n            \"language\": \"string\",\n            \"published_at\": \"2015-03-05T17:36:03.590Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 8816.848713780224\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://vzYAYhwTZniSyPKqpmTRVY.ucrWQa2L+OKXJ3\",\n        \"image_url\": \"https://favyTFXDueVABToOICvZoiwxL.whdBqb+hNsKRyh6sLr0fiWKWskXU4u,MmRZ2ZbFerxPaBaNcuOcfoNoG0,wtIqpPBPvbnVub\",\n        \"language\": \"string\",\n        \"published_at\": \"2007-08-12T05:52:03.727Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 7442.665747517118,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://DlDZ.ioKj6bGVjuwBNQWpTfU-wXRStZvZOv1c,3Zo1gDfa-YkgZ-oPxoO4dpwl-5\",\n            \"image_url\": \"https://YmWJhdPRhmfDHehWpdzLJUA.ugACXVXzvCLHfX1xVcumaK8ixK1\",\n            \"language\": \"string\",\n            \"published_at\": \"1961-12-11T09:01:44.017Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 9418.625047464526\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://PbXjdkemwGsiXQGw.igcaBu9TM1ecYlQZZA\",\n            \"image_url\": \"http://XIWwkbmpoBuYdmeN.pqarepATHeGPWbB2Vj4AccFXckDcswVBN95qwS\",\n            \"language\": \"string\",\n            \"published_at\": \"1946-11-29T16:08:56.096Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2044.8696668481248\n          }\n        ]\n      }\n    ],\n    \"food\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://fSCGjdOVvGdKQYKOnQAbihRWUCqeQHZA.aqMPWN2AMDHoeBe+zScKSA9f+MWJtMi1Rtciv\",\n        \"image_url\": \"http://KjLlpcxHJSomvUqfsONSrXRiHAOgUW.nzrwOO1Xqd+hhmDoZFUyZ.vsrS.5L4\",\n        \"language\": \"string\",\n        \"published_at\": \"1988-03-21T05:21:42.274Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 2414.4562274814184,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://gmvjzRlcMZE.kibJFSd.wf1FjmUggPo1ubxkV+g\",\n            \"image_url\": \"http://CRbTfoCjLqeGIQmULGG.xsokHlckqfYnbR2u.XNXVKLY9yGWyouq5ZW\",\n            \"language\": \"string\",\n            \"published_at\": \"2007-02-12T02:05:15.028Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 2965.6159422825913\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://dwxClaYyRTQvKFIzJLLGccJWMQNkZsK.bcyD8SO\",\n            \"image_url\": \"http://MYMVdpKTWEBTxHSHJkSHZGAKsyCsxqCKA.rkPyHnA3HEj1eE\",\n            \"language\": \"string\",\n            \"published_at\": \"1998-04-27T14:26:19.851Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 552.8182858925445\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://YQaAiIChrgmM.fmyYU7ysFfZBFkt4q-0hpf+p6JJp4K3uonYXNv25NMjqAz7EQ3-Esi0Xr3\",\n        \"image_url\": \"http://fmFanNLiRUnmgfTXOPefnaOfalRve.tfjugaBiifgMowGEtOu4eYt9LAII,i8z19RqYgWQLIClTNvrhFk96yevbXqp\",\n        \"language\": \"string\",\n        \"published_at\": \"1979-06-13T15:27:19.180Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 5461.937526650451,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://sPXImwpZhT.ykflSF2GX9\",\n            \"image_url\": \"https://K.mbfqDxhrWZS1\",\n            \"language\": \"string\",\n            \"published_at\": \"1967-07-27T11:31:22.166Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6461.929437107406\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://DhIaWfRewboiuRbeytPgHTmUvCch.bhsFFt1f2dvSlNuvKdLsLdts0UqOuZ0,k2vKn-lbnxMn9yX7zoW\",\n            \"image_url\": \"http://nratFpfZfNmaS.nqnpnhTU2FAZ6f\",\n            \"language\": \"string\",\n            \"published_at\": \"2020-08-29T21:42:13.441Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 332.0996125368314\n          }\n        ]\n      }\n    ],\n    \"travel\": [\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"http://DjkwADFLGVZhlpjpKkqnyzShlwMMzLO.sewEM2OsmpqyKB1vXRvEbR+7gxAQLPqe4RQMec+bgLhIlC9\",\n        \"image_url\": \"http://TwHJOkaASEB.iwmdfUbptPp9RF649xay+go6wtV17wN1B8,SrzxkM-T-L2eY.oS\",\n        \"language\": \"string\",\n        \"published_at\": \"2024-03-17T00:12:17.525Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 271.02125340434213,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://WezNVCMmqDoWKzcPeqbMquzhkEMizll.lgwpA+cA58Ifov+,hvTEYpsKNGzQgNbJObMlNOoyY39BfhJCzveUYUK-y4aBnmKgLXSA\",\n            \"image_url\": \"http://wZfzrA.ccmnpntAms0f38PrIeFZyHqIW+u86mLv\",\n            \"language\": \"string\",\n            \"published_at\": \"2018-03-02T08:23:53.632Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 7606.556587341881\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://hweJAnAmOyybqluBsPwFeJbnIklhFTJXv.cpIR+-rstOSKcADa\",\n            \"image_url\": \"https://amEDEPfCicZWonpbVMwGcKEQdFuwsBb.btvgN9SPG1lCAl.U.xLf\",\n            \"language\": \"string\",\n            \"published_at\": \"1957-06-30T10:20:17.519Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 3001.1674524243394\n          }\n        ]\n      },\n      {\n        \"uuid\": \"string\",\n        \"title\": \"string\",\n        \"description\": \"string\",\n        \"keywords\": \"string\",\n        \"snippet\": \"string\",\n        \"url\": \"https://WiieNevfvhyPfFKkr.fsqT9ZhU0EZKxYJbsFov4j3H8B4qzMR7BRCZ7.nezqltHCw9eYn.7CrhEB6\",\n        \"image_url\": \"http://AulFLrnEHTffRnyFzy.yqWVzgKW6.6a73QqiyQGcZ\",\n        \"language\": \"string\",\n        \"published_at\": \"1979-09-21T13:01:04.222Z\",\n        \"source\": \"string\",\n        \"categories\": [\n          \"string\",\n          \"string\"\n        ],\n        \"locale\": \"string\",\n        \"relevance_score\": 6382.731066980473,\n        \"similar\": [\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"http://xvBg.tdayO1Zx8wCh+BUvVMFohs,-5dcH5lXaYbovwL\",\n            \"image_url\": \"http://lVhiuQ.qafGUGg.hEXs\",\n            \"language\": \"string\",\n            \"published_at\": \"2002-12-30T04:06:17.265Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 6541.378645635665\n          },\n          {\n            \"uuid\": \"string\",\n            \"title\": \"string\",\n            \"description\": \"string\",\n            \"keywords\": \"string\",\n            \"snippet\": \"string\",\n            \"url\": \"https://sjPQVoryCGKEvNfIMmto.mwinL4wkA3NiGhejGtC2WVByUcMA,s7IIBKGoeMJc1i\",\n            \"image_url\": \"http://HjHQkpIysxHEHdmaDuwTwule.hzwvqJQTVidqVzYppSjLyO8hrgriRd-1BxVUciav30Kd,eTE+6LZ6bfNiW+Eff-\",\n            \"language\": \"string\",\n            \"published_at\": \"1990-03-22T12:40:29.908Z\",\n            \"source\": \"string\",\n            \"categories\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"locale\": \"string\",\n            \"relevance_score\": 5950.917531174689\n          }\n        ]\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8381492f-4481-4674-9986-c4a35b5dc3b8",
+              "name": "Bad request - malformed parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6a7993e4-d94e-405a-be13-2f73f14af72d",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1e026615-e4a4-4f2e-bf70-6c4a5ad70f8a",
+              "name": "Payment required - usage limit reached.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Payment Required",
+              "code": 402,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d73a0d57-1c4e-4edf-9356-3fe4a28c2eba",
+              "name": "Forbidden - endpoint access restricted on your plan.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ade28e6a-1705-463f-be7d-fba79b7aecbb",
+              "name": "Too many requests - rate limit reached (60-second window).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "headlines"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "headlines_per_category",
+                      "value": "6"
+                    },
+                    {
+                      "key": "include_similar",
+                      "value": "true"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.thenewsapi.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c42b1a93-a112-4f95-b9f6-a324b79a407d",
+    "name": "The News All News Headlines API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.",
+      "type": "text/plain"
+    }
+  }
+}

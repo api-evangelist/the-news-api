@@ -1,0 +1,624 @@
+{
+  "item": [
+    {
+      "id": "6ceaaa92-ad34-4785-89dc-40e94543568c",
+      "name": "Top Stories",
+      "description": {
+        "content": "Top stories filtered by keyword, category, and date.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "953c1563-0d50-41eb-b919-ef8aa1446756",
+          "name": "Get Top Stories",
+          "request": {
+            "name": "Get Top Stories",
+            "description": {
+              "content": "Retrieve live and historical top stories globally or filtered by keyword, category, country, language, domain, or date. Supports advanced boolean search operators.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "news",
+                "top"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_token",
+                  "value": "<string>",
+                  "description": "(Required) Your API authentication token."
+                },
+                {
+                  "disabled": false,
+                  "key": "search",
+                  "value": "<string>",
+                  "description": "Search query with boolean operators: + (AND), | (OR), - (negation), \" (phrase), * (prefix), () (precedence)."
+                },
+                {
+                  "disabled": false,
+                  "key": "search_fields",
+                  "value": "<string>",
+                  "description": "Comma-separated fields to search: title, description, keywords, main_text. Default: title,main_text."
+                },
+                {
+                  "disabled": false,
+                  "key": "locale",
+                  "value": "<string>",
+                  "description": "Comma-separated country codes to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories: general, science, sports, business, health, entertainment, tech, politics, food, travel."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_categories",
+                  "value": "<string>",
+                  "description": "Comma-separated categories to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_domains",
+                  "value": "<string>",
+                  "description": "Comma-separated domains to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to include."
+                },
+                {
+                  "disabled": false,
+                  "key": "exclude_source_ids",
+                  "value": "<string>",
+                  "description": "Comma-separated source IDs to exclude."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Comma-separated language codes to filter by."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_before",
+                  "value": "<string>",
+                  "description": "Filter to articles published before this datetime (Y-m-d\\TH:i:s)."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_after",
+                  "value": "<string>",
+                  "description": "Filter to articles published after this datetime."
+                },
+                {
+                  "disabled": false,
+                  "key": "published_on",
+                  "value": "<date>",
+                  "description": "Filter to articles published on this exact date (Y-m-d)."
+                },
+                {
+                  "disabled": false,
+                  "key": "sort",
+                  "value": "<string>",
+                  "description": "Sort by published_at (default) or relevance_score."
+                },
+                {
+                  "disabled": false,
+                  "key": "limit",
+                  "value": "<integer>",
+                  "description": "Number of results per page (plan-dependent maximum)."
+                },
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "1",
+                  "description": "Page number for pagination (default 1, max result set 20,000)."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4a0bd644-ccef-4bb8-b4a4-09e3ccea2497",
+              "name": "List of top news articles.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"found\": 8264,\n    \"returned\": 5999,\n    \"limit\": 154,\n    \"page\": 2668\n  },\n  \"data\": [\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"https://ZvCfKUGCAuatPaFHpCEwIII.moilRj4Wlc9Tis5rH+eCc,kSp45FsTpOY,lS4n,zH5\",\n      \"image_url\": \"https://OCDasWjFHuO.ktiagDG\",\n      \"language\": \"string\",\n      \"published_at\": \"1985-06-09T02:17:26.856Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 1844.1202990097026\n    },\n    {\n      \"uuid\": \"string\",\n      \"title\": \"string\",\n      \"description\": \"string\",\n      \"keywords\": \"string\",\n      \"snippet\": \"string\",\n      \"url\": \"http://BNJryzkHZwboAK.nffZv5UTIWnkWTVEEzBMfaNp.-GpCHcTuDGW,u\",\n      \"image_url\": \"http://CPEChDbRzZLzUbkmwFtZEezNDQANPxFGk.hkWqBtfUPplZtSmRXwk9aHKNx..a12-\",\n      \"language\": \"string\",\n      \"published_at\": \"1963-09-26T18:14:05.479Z\",\n      \"source\": \"string\",\n      \"categories\": [\n        \"string\",\n        \"string\"\n      ],\n      \"locale\": \"string\",\n      \"relevance_score\": 5713.259295943924\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6ebd182f-f27b-4cce-a710-b632e59bcf41",
+              "name": "Bad request - malformed parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "372d836b-658d-47ad-b626-4859aa5c603d",
+              "name": "Unauthorized - invalid API token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e2ab7147-e895-4d2e-8217-c027fcb22062",
+              "name": "Too many requests - rate limit reached (60-second window).",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "news",
+                    "top"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_token",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "search_fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "locale",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_categories",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_domains",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "exclude_source_ids",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_before",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_after",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "published_on",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "page",
+                      "value": "1"
+                    },
+                    {
+                      "key": "api_token",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": {\n    \"code\": \"string\",\n    \"message\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.thenewsapi.com/v1",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_token"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "58592a8c-1255-4a91-b4f7-db471c03f995",
+    "name": "The News All News Top Stories API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.",
+      "type": "text/plain"
+    }
+  }
+}
