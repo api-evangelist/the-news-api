@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: The News All News Top Stories API
+  title: News All News Top Stories API
   description: The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.
   version: 1.0.0
   contact:
@@ -146,44 +146,6 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   schemas:
-    NewsListResponse:
-      type: object
-      properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Article'
-          description: Array of news articles.
-    Meta:
-      type: object
-      description: Pagination metadata.
-      properties:
-        found:
-          type: integer
-          description: Total number of articles matching the query.
-        returned:
-          type: integer
-          description: Number of articles returned on this page.
-        limit:
-          type: integer
-          description: Maximum results per page.
-        page:
-          type: integer
-          description: Current page number.
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error description.
     Article:
       type: object
       description: A news article.
@@ -230,9 +192,48 @@ components:
           type: string
           description: Country/locale code (e.g., us, gb, ca).
         relevance_score:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           description: Relevance score for search results or similarity matching.
+    Meta:
+      type: object
+      description: Pagination metadata.
+      properties:
+        found:
+          type: integer
+          description: Total number of articles matching the query.
+        returned:
+          type: integer
+          description: Number of articles returned on this page.
+        limit:
+          type: integer
+          description: Maximum results per page.
+        page:
+          type: integer
+          description: Current page number.
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
+    NewsListResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Article'
+          description: Array of news articles.
   responses:
     RateLimited:
       description: Too many requests - rate limit reached (60-second window).

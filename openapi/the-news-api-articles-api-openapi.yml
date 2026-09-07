@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: The News All News Articles API
+  title: News All News Articles API
   description: The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.
   version: 1.0.0
   contact:
@@ -93,8 +93,9 @@ components:
           type: string
           description: Country/locale code (e.g., us, gb, ca).
         relevance_score:
-          type: number
-          nullable: true
+          type:
+          - number
+          - 'null'
           description: Relevance score for search results or similarity matching.
     Error:
       type: object

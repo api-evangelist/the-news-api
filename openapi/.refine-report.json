@@ -19,6 +19,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
+  "notes": [
+    "the-news-api-all-news-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "the-news-api-articles-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "the-news-api-headlines-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "the-news-api-similar-news-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "the-news-api-sources-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "the-news-api-top-stories-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
   "skipped": []
 }
