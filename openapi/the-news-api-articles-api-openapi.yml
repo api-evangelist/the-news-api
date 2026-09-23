@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: News All News Articles API
+  title: News Articles API
   description: The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.
   version: 1.0.0
   contact:
@@ -110,14 +110,14 @@ components:
               type: string
               description: Human-readable error description.
   responses:
-    Unauthorized:
-      description: Unauthorized - invalid API token.
+    NotFound:
+      description: Not found - resource does not exist.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found - resource does not exist.
+    Unauthorized:
+      description: Unauthorized - invalid API token.
       content:
         application/json:
           schema:

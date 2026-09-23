@@ -1,12 +1,7 @@
 {
   "provider": "the-news-api",
   "sources": [
-    "the-news-api-all-news-api-openapi.yml",
-    "the-news-api-articles-api-openapi.yml",
-    "the-news-api-headlines-api-openapi.yml",
-    "the-news-api-similar-news-api-openapi.yml",
-    "the-news-api-sources-api-openapi.yml",
-    "the-news-api-top-stories-api-openapi.yml"
+    "_original/the-news-api-openapi.yml"
   ],
   "outputs": [
     "the-news-api-all-news-api-openapi.yml",
@@ -20,13 +15,16 @@
   "errors": [],
   "warnings": [],
   "notes": [
-    "the-news-api-all-news-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "the-news-api-articles-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "the-news-api-headlines-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "the-news-api-similar-news-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "the-news-api-sources-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
-    "the-news-api-top-stories-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "the-news-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
     "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "the-news-api-all-news-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-news-api-articles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-news-api-headlines-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-news-api-similar-news-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-news-api-sources-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "the-news-api-top-stories-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

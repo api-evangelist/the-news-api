@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: News All News Similar News API
+  title: Similar News API
   description: The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.
   version: 1.0.0
   contact:
@@ -123,6 +123,28 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    NewsListResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Article'
+          description: Array of news articles.
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
     Article:
       type: object
       description: A news article.
@@ -189,37 +211,15 @@ components:
         page:
           type: integer
           description: Current page number.
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error description.
-    NewsListResponse:
-      type: object
-      properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Article'
-          description: Array of news articles.
   responses:
-    NotFound:
-      description: Not found - resource does not exist.
+    Unauthorized:
+      description: Unauthorized - invalid API token.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - invalid API token.
+    NotFound:
+      description: Not found - resource does not exist.
       content:
         application/json:
           schema:

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: News All News Headlines API
+  title: News Headlines API
   description: The News API provides access to worldwide news articles and top stories from over 40,000 sources in 50 countries. Search and filter news by keyword, category, language, country, and date. All endpoints require an API token obtained by registering at thenewsapi.com.
   version: 1.0.0
   contact:
@@ -118,20 +118,8 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Too many requests - rate limit reached (60-second window).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
     PaymentRequired:
       description: Payment required - usage limit reached.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - invalid API token.
       content:
         application/json:
           schema:
@@ -142,54 +130,31 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized - invalid API token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too many requests - rate limit reached (60-second window).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   schemas:
-    HeadlinesResponse:
+    Error:
       type: object
       properties:
-        data:
+        error:
           type: object
-          description: Articles organized by category.
           properties:
-            general:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            business:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            sports:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            tech:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            science:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            health:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            entertainment:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            politics:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            food:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
-            travel:
-              type: array
-              items:
-                $ref: '#/components/schemas/ArticleWithSimilar'
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
     Article:
       type: object
       description: A news article.
@@ -240,18 +205,6 @@ components:
           - number
           - 'null'
           description: Relevance score for search results or similarity matching.
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error description.
     ArticleWithSimilar:
       allOf:
       - $ref: '#/components/schemas/Article'
@@ -262,6 +215,53 @@ components:
             items:
               $ref: '#/components/schemas/Article'
             description: Similar articles related to this article.
+    HeadlinesResponse:
+      type: object
+      properties:
+        data:
+          type: object
+          description: Articles organized by category.
+          properties:
+            general:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            business:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            sports:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            tech:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            science:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            health:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            entertainment:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            politics:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            food:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
+            travel:
+              type: array
+              items:
+                $ref: '#/components/schemas/ArticleWithSimilar'
   securitySchemes:
     apiToken:
       type: apiKey

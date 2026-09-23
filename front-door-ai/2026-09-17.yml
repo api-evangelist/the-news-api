@@ -1,0 +1,26 @@
+# Front Door AI Index — the-news-api — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: the-news-api
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.thenewsapi.com
+  final_host: www.thenewsapi.com
+  ownership: own
+  owner: the-news-api
+  shares_host_with:
+  - thenews
+  inherited_from: null
+  verdict: silent
+  score: 0
+  host_score: 0
+  density: 0.0
+  words: 1287
+  tiers:
+    agentic: 0
+    core: 0
+    model: 0
+  ambiguous: 3
+  top_terms:
+    smart: 3
