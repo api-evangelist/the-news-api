@@ -111,38 +111,17 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  responses:
-    Forbidden:
-      description: Forbidden - endpoint access restricted on your plan.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    PaymentRequired:
-      description: Payment required - usage limit reached.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    BadRequest:
-      description: Bad request - malformed parameters.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - invalid API token.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
-    RateLimited:
-      description: Too many requests - rate limit reached (60-second window).
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/Error'
   schemas:
+    ArticleWithSimilar:
+      allOf:
+      - $ref: '#/components/schemas/Article'
+      - type: object
+        properties:
+          similar:
+            type: array
+            items:
+              $ref: '#/components/schemas/Article'
+            description: Similar articles related to this article.
     Error:
       type: object
       properties:
@@ -205,16 +184,6 @@ components:
           - number
           - 'null'
           description: Relevance score for search results or similarity matching.
-    ArticleWithSimilar:
-      allOf:
-      - $ref: '#/components/schemas/Article'
-      - type: object
-        properties:
-          similar:
-            type: array
-            items:
-              $ref: '#/components/schemas/Article'
-            description: Similar articles related to this article.
     HeadlinesResponse:
       type: object
       properties:
@@ -262,6 +231,37 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/ArticleWithSimilar'
+  responses:
+    PaymentRequired:
+      description: Payment required - usage limit reached.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: Forbidden - endpoint access restricted on your plan.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    BadRequest:
+      description: Bad request - malformed parameters.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: Unauthorized - invalid API token.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    RateLimited:
+      description: Too many requests - rate limit reached (60-second window).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
   securitySchemes:
     apiToken:
       type: apiKey
