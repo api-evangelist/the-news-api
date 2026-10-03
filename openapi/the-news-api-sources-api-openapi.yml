@@ -86,18 +86,6 @@ components:
           items:
             type: string
           description: Categories covered by this source.
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error description.
     SourcesResponse:
       type: object
       properties:
@@ -116,6 +104,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Source'
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
   responses:
     Unauthorized:
       description: Unauthorized - invalid API token.
