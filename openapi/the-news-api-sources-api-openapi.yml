@@ -65,27 +65,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Source:
-      type: object
-      description: A news source.
-      properties:
-        source_id:
-          type: string
-          description: Unique identifier for the source.
-        domain:
-          type: string
-          description: Domain name of the source (e.g., cnn.com).
-        language:
-          type: string
-          description: Primary language of the source.
-        locale:
-          type: string
-          description: Country/locale code.
-        categories:
-          type: array
-          items:
-            type: string
-          description: Categories covered by this source.
     SourcesResponse:
       type: object
       properties:
@@ -116,6 +95,27 @@ components:
             message:
               type: string
               description: Human-readable error description.
+    Source:
+      type: object
+      description: A news source.
+      properties:
+        source_id:
+          type: string
+          description: Unique identifier for the source.
+        domain:
+          type: string
+          description: Domain name of the source (e.g., cnn.com).
+        language:
+          type: string
+          description: Primary language of the source.
+        locale:
+          type: string
+          description: Country/locale code.
+        categories:
+          type: array
+          items:
+            type: string
+          description: Categories covered by this source.
   responses:
     Unauthorized:
       description: Unauthorized - invalid API token.

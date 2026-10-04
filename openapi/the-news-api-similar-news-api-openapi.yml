@@ -123,28 +123,22 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    NewsListResponse:
+    Meta:
       type: object
+      description: Pagination metadata.
       properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Article'
-          description: Array of news articles.
-    Error:
-      type: object
-      properties:
-        error:
-          type: object
-          properties:
-            code:
-              type: string
-              description: Error code.
-            message:
-              type: string
-              description: Human-readable error description.
+        found:
+          type: integer
+          description: Total number of articles matching the query.
+        returned:
+          type: integer
+          description: Number of articles returned on this page.
+        limit:
+          type: integer
+          description: Maximum results per page.
+        page:
+          type: integer
+          description: Current page number.
     Article:
       type: object
       description: A news article.
@@ -195,31 +189,37 @@ components:
           - number
           - 'null'
           description: Relevance score for search results or similarity matching.
-    Meta:
+    NewsListResponse:
       type: object
-      description: Pagination metadata.
       properties:
-        found:
-          type: integer
-          description: Total number of articles matching the query.
-        returned:
-          type: integer
-          description: Number of articles returned on this page.
-        limit:
-          type: integer
-          description: Maximum results per page.
-        page:
-          type: integer
-          description: Current page number.
+        meta:
+          $ref: '#/components/schemas/Meta'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Article'
+          description: Array of news articles.
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              description: Error code.
+            message:
+              type: string
+              description: Human-readable error description.
   responses:
-    NotFound:
-      description: Not found - resource does not exist.
+    Unauthorized:
+      description: Unauthorized - invalid API token.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    Unauthorized:
-      description: Unauthorized - invalid API token.
+    NotFound:
+      description: Not found - resource does not exist.
       content:
         application/json:
           schema:
