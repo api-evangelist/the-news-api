@@ -123,22 +123,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    Meta:
-      type: object
-      description: Pagination metadata.
-      properties:
-        found:
-          type: integer
-          description: Total number of articles matching the query.
-        returned:
-          type: integer
-          description: Number of articles returned on this page.
-        limit:
-          type: integer
-          description: Maximum results per page.
-        page:
-          type: integer
-          description: Current page number.
     Article:
       type: object
       description: A news article.
@@ -189,16 +173,6 @@ components:
           - number
           - 'null'
           description: Relevance score for search results or similarity matching.
-    NewsListResponse:
-      type: object
-      properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/Article'
-          description: Array of news articles.
     Error:
       type: object
       properties:
@@ -211,15 +185,41 @@ components:
             message:
               type: string
               description: Human-readable error description.
+    NewsListResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/Article'
+          description: Array of news articles.
+    Meta:
+      type: object
+      description: Pagination metadata.
+      properties:
+        found:
+          type: integer
+          description: Total number of articles matching the query.
+        returned:
+          type: integer
+          description: Number of articles returned on this page.
+        limit:
+          type: integer
+          description: Maximum results per page.
+        page:
+          type: integer
+          description: Current page number.
   responses:
-    Unauthorized:
-      description: Unauthorized - invalid API token.
+    NotFound:
+      description: Not found - resource does not exist.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
-    NotFound:
-      description: Not found - resource does not exist.
+    Unauthorized:
+      description: Unauthorized - invalid API token.
       content:
         application/json:
           schema:
