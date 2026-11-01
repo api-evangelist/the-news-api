@@ -1,4 +1,4 @@
-# The News API (the-news-api)
+# The News API
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,65 +66,162 @@
 
 The News API provides free access to search worldwide news and top stories from over 40,000 sources in 50 countries. Access live and historical news articles with advanced filtering by keyword, category, language, country, domain, and date. The API supports boolean search operators, pagination, and returns structured article data including headlines, descriptions, images, and category classifications.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/the-news-api/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/the-news-api/refs/heads/main/apis.yml)
+**Areas:** Articles · Headlines · News · Media · Search · International
 
-## Scope
+## The News API on APIs.io
 
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for The News API is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/the-news-api/](https://apis.io/providers/the-news-api/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (6)
 
-- Articles
-- Headlines
-- News
-- Media
-- Search
-- International
+- [The News API All News API](https://apis.io/apis/the-news-api/the-news-api-all-news-api/) — Full historical and live article database search.
+- [The News API Articles API](https://apis.io/apis/the-news-api/the-news-api-articles-api/) — Retrieve specific articles by UUID.
+- [The News API Headlines API](https://apis.io/apis/the-news-api/the-news-api-headlines-api/) — Latest headlines organized by category.
+- [The News API Similar News API](https://apis.io/apis/the-news-api/the-news-api-similar-news-api/) — Articles similar to a given article.
+- [The News API Sources API](https://apis.io/apis/the-news-api/the-news-api-sources-api/) — Available news sources and their metadata.
+- [The News API Top Stories API](https://apis.io/apis/the-news-api/the-news-api-top-stories-api/) — Top stories filtered by keyword, category, and date.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-02-09
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### The News API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Get free access to search worldwide news and top stories from over 40,000 sources in 50 countries. Access live and historical articles with filters for keyword, category, language, locale, domain, and publication date.
+- [The News Api Agentic Access](https://apis.io/agentic-access/the-news-api/the-news-api-agentic-access/)
 
-- **Human URL:** [https://www.thenewsapi.com/](https://www.thenewsapi.com/)
-- **Base URL:** `https://api.thenewsapi.com/v1`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Articles
-- Headlines
-- News
-- Search
-- International
+- [The News API Article](https://apis.io/schemas/the-news-api/the-news-api-article/)
 
-#### Properties
+#### JSON Structure (1)
 
-- [Documentation](https://www.thenewsapi.com/documentation)
-- [Sign Up](https://www.thenewsapi.com/register)
-- [Authentication](https://www.thenewsapi.com/documentation#auth)
-- [OpenAPI](openapi/the-news-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/the-news-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/the-news-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [The News Api Article Structure](https://apis.io/json-structure/the-news-api/the-news-api-article-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [The News Api Context](https://apis.io/jsonld/the-news-api/the-news-api-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [The News Api Vocabulary](https://apis.io/vocabularies/the-news-api/the-news-api-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [The News Api Top Stories Example](https://apis.io/examples/the-news-api/the-news-api-top-stories-example/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [The News API](https://apis.io/collections/the-news-api/open-the-news-api/)
+- [The News All News API](https://apis.io/collections/the-news-api/open-the-news-api-all-news-api/)
+- [The News All News Articles API](https://apis.io/collections/the-news-api/open-the-news-api-articles-api/)
+- [The News All News Headlines API](https://apis.io/collections/the-news-api/open-the-news-api-headlines-api/)
+- [The News All News Similar News API](https://apis.io/collections/the-news-api/open-the-news-api-similar-news-api/)
+- [The News All News Sources API](https://apis.io/collections/the-news-api/open-the-news-api-sources-api/)
+- [The News All News Top Stories API](https://apis.io/collections/the-news-api/open-the-news-api-top-stories-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [The News API — jsonschema rules](https://apis.io/rules/the-news-api/the-news-api-jsonschema-spectral-rules/)
+- [The News API API Rules](https://apis.io/rules/the-news-api/the-news-api-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [The News Api Authentication](https://apis.io/security/the-news-api/the-news-api-authentication/)
+- [The News Api Domain Security](https://apis.io/security/the-news-api/the-news-api-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [The News Api Plans Pricing](https://apis.io/plans/the-news-api/the-news-api-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [The News Api Rate Limits](https://apis.io/rate-limits/the-news-api/the-news-api-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [The News Api Finops](https://apis.io/finops/the-news-api/the-news-api-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.thenewsapi.com/)
 - [Documentation](https://www.thenewsapi.com/documentation)
-- [Sign Up](https://www.thenewsapi.com/register)
 - [Pricing](https://www.thenewsapi.com/pricing)
-- [Spectral Ruleset](rules/the-news-api-rules.yml)
-- [JSON Schema](json-schema/the-news-api-article-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [J S O N L D Context](json-ld/the-news-api-context.jsonld)
-- [Vocabulary](vocabulary/the-news-api-vocabulary.yml)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 35.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 53.8 |
+| Contract governance | 27.3 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 31.6 |
+
+**Agent readiness 20.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/the-news-api/](https://apis.io/providers/the-news-api/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for The News API: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/the-news-api/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
